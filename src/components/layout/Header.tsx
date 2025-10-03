@@ -262,7 +262,7 @@ const Header = () => {
                     <a
                       key={link.href}
                       href={link.href}
-                      className="block py-2 text-white hover:text-blue-500 transition-colors"
+                      className="block py-2 text-slate-600 hover:text-blue-500 transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.name}
