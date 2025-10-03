@@ -53,7 +53,7 @@ Professional, enterprise-grade website for Evarest - an Engineering-as-a-Service
 ### Installation
 
 ```bash
-cd evarest-site
+cd evarest
 npm install
 ```
 
@@ -82,7 +82,7 @@ npm run preview
 ## Project Structure
 
 ```
-evarest-site/
+evarest/
 ├── public/
 │   └── hero.jpg                    # Hero background image
 ├── src/
