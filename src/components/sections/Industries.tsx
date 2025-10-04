@@ -12,7 +12,7 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="section bg-white">
+    <section id="industries" className="section bg-gradient-to-br from-white via-brand-blue-50/30 to-white">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -30,19 +30,7 @@ const Industries = () => {
             const Icon = iconMap[industry.icon as keyof typeof iconMap];
             return (
               <Card key={industry.id} className="group text-center">
-                {/* Icon with Gradient Background */}
-                <div
-                  className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${industry.gradient} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <Icon className="w-8 h-8" />
-                </div>
-
-                {/* Industry Name */}
-                <h3 className="text-xl font-bold mb-4 text-slate-800">
-                  {industry.name}
-                </h3>
-
-                {/* Compliance Badges */}
+                {/* Compliance Badges - Moved to Top */}
                 <div className="mb-6">
                   <div className="flex flex-wrap gap-2 justify-center">
                     {industry.compliance.map((badge) => (
@@ -52,6 +40,16 @@ const Industries = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Icon with Solid Background */}
+                <div className="inline-flex p-4 rounded-xl bg-brand-blue-500 text-white mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <Icon className="w-8 h-8" />
+                </div>
+
+                {/* Industry Name */}
+                <h3 className="text-xl font-bold mb-4 text-slate-800">
+                  {industry.name}
+                </h3>
 
                 {/* Stats */}
                 <div className="space-y-2">
@@ -68,7 +66,7 @@ const Industries = () => {
 
         {/* Bottom Badge */}
         <div className="text-center mt-12">
-          <div className="inline-flex items-center px-6 py-3 bg-green-100 text-green-800 rounded-full font-semibold">
+          <div className="inline-flex items-center px-6 py-3 bg-brand-blue-100 text-brand-blue-800 rounded-full font-semibold">
             <span className="text-2xl mr-2">🏆</span>
             100% Client Retention Rate
           </div>
