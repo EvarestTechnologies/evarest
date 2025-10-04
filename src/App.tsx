@@ -1,7 +1,9 @@
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import ClientLogos from './components/sections/ClientLogos';
+// import Hero from './components/sections/Hero';
+import HeroNew from './components/sections/HeroNew';
+// import ClientLogos from './components/sections/ClientLogos';
+import ClientLogosNew from './components/sections/ClientLogosNew';
 import Services from './components/sections/Services';
 import Industries from './components/sections/Industries';
 import CaseStudies from './components/sections/CaseStudies';
@@ -13,8 +15,8 @@ function App() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <Hero />
-        <ClientLogos />
+        <HeroNew />
+        <ClientLogosNew />
         <Services />
         <Industries />
         <CaseStudies />
