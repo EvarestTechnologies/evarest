@@ -1,12 +1,15 @@
 import { Award, Users, Globe, Clock } from 'lucide-react';
 import Badge from '../ui/Badge';
+import CountUp from '../ui/CountUp';
+import CertificationCard from '../ui/CertificationCard';
+import WorldMap from '../ui/WorldMap';
 
 const Capabilities = () => {
   const teamMetrics = [
-    { icon: Users, value: '50+', label: 'Senior Engineers' },
-    { icon: Award, value: '15+', label: 'Solutions Architects' },
-    { icon: Clock, value: '8+', label: 'Years Avg Experience' },
-    { icon: Globe, value: '24/7', label: 'Global Support' },
+    { icon: Users, value: 50, suffix: '+', label: 'Senior Engineers', isText: false },
+    { icon: Award, value: 15, suffix: '+', label: 'Solutions Architects', isText: false },
+    { icon: Clock, value: 8, suffix: '+', label: 'Years Avg Experience', isText: false },
+    { icon: Globe, value: '24/7', suffix: '', label: 'Global Support', isText: true },
   ];
 
   const certifications = [
@@ -26,7 +29,7 @@ const Capabilities = () => {
   ];
 
   return (
-    <section id="capabilities" className="section bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="capabilities" className="section bg-gradient-to-br from-white via-brand-blue-50/30 to-white">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -43,12 +46,19 @@ const Capabilities = () => {
           {teamMetrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              <div key={index} className="text-center">
-                <div className="inline-flex p-4 bg-white rounded-2xl shadow-lg mb-4">
-                  <Icon className="w-8 h-8 text-blue-500" />
+              <div key={index} className="text-center group">
+                <div className="inline-flex p-4 bg-brand-blue-500 rounded-2xl shadow-lg mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <Icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-slate-800 mb-2">
-                  {metric.value}
+                  {metric.isText ? (
+                    metric.value
+                  ) : (
+                    <>
+                      <CountUp end={Number(metric.value)} duration={2000} />
+                      {metric.suffix}
+                    </>
+                  )}
                 </div>
                 <div className="text-sm text-slate-600">{metric.label}</div>
               </div>
@@ -56,15 +66,14 @@ const Capabilities = () => {
           })}
         </div>
 
-        {/* Global Delivery */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg mb-12 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-slate-800">
-            Global Delivery Model
-          </h3>
-          <p className="text-slate-600 mb-6">
-            Delivery Centers: <span className="font-semibold">US (NYC, SF) • EU (London) • APAC (Singapore)</span>
-          </p>
-        </div>
+      </div>
+
+      {/* Global Delivery with World Map - Full Width */}
+      <div className="mb-12">
+        <WorldMap />
+      </div>
+
+      <div className="container-custom">
 
         {/* Certifications */}
         <div className="mb-12">
@@ -73,23 +82,12 @@ const Capabilities = () => {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications.map((cert, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md">
-                <div className="flex items-baseline mb-3">
-                  <span className="text-3xl font-bold text-blue-500 mr-2">
-                    {cert.count}
-                  </span>
-                  <span className="text-lg font-semibold text-slate-800">
-                    {cert.category}
-                  </span>
-                </div>
-                <div className="space-y-1">
-                  {cert.items.map((item, idx) => (
-                    <div key={idx} className="text-sm text-slate-600">
-                      • {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <CertificationCard
+                key={index}
+                category={cert.category}
+                count={cert.count}
+                items={cert.items}
+              />
             ))}
           </div>
         </div>
@@ -103,9 +101,9 @@ const Capabilities = () => {
             {expertiseAreas.map((area, index) => (
               <div
                 key={index}
-                className="flex items-center space-x-2 p-3 bg-slate-50 rounded-lg"
+                className="flex items-center space-x-2 p-3 bg-slate-50 rounded-lg hover:bg-brand-blue-50 hover:border-brand-blue-400 border-2 border-transparent transition-all duration-300"
               >
-                <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0" />
+                <div className="w-2 h-2 bg-brand-blue-500 rounded-full flex-shrink-0" />
                 <span className="text-slate-700 font-medium">{area}</span>
               </div>
             ))}
@@ -115,13 +113,13 @@ const Capabilities = () => {
         {/* SLA Commitment */}
         <div className="text-center mt-12">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Badge variant="success" size="md">
+            <Badge variant="primary" size="md">
               99.9% Uptime SLA
             </Badge>
-            <Badge variant="success" size="md">
+            <Badge variant="primary" size="md">
               24/7 Support Coverage
             </Badge>
-            <Badge variant="success" size="md">
+            <Badge variant="primary" size="md">
               ISO 9001 Certified
             </Badge>
           </div>
