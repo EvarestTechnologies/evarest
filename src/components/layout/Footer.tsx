@@ -240,7 +240,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
-                aria-label="Visit our LinkedIn page"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
@@ -249,7 +249,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
-                aria-label="Follow us on Twitter"
+                aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" aria-hidden="true" />
               </a>
@@ -258,7 +258,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
-                aria-label="View our GitHub repositories"
+                aria-label="GitHub"
               >
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>

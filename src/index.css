@@ -89,29 +89,4 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
-
-  /* Accessibility: Reduce motion for users who prefer it */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  /* Performance: Add will-change for frequently animated elements */
-  .hover\:scale-110:hover,
-  .hover\:rotate-3:hover,
-  .hover\:-translate-y-0\.5:hover {
-    will-change: transform;
-  }
-
-  .hover\:scale-110,
-  .hover\:rotate-3,
-  .hover\:-translate-y-0\.5 {
-    will-change: auto;
-  }
 }
