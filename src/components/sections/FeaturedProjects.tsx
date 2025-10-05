@@ -1,4 +1,4 @@
-import { ArrowRight, Smartphone, Tablet, TrendingUp, BarChart3, PieChart, LineChart } from 'lucide-react';
+import { ArrowRight, Smartphone, Tablet, TrendingUp } from 'lucide-react';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 
@@ -65,7 +65,7 @@ const FeaturedProjects = () => {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="primary" size="lg" className="mb-4">
+          <Badge variant="primary" className="mb-4">
             Featured Work
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
