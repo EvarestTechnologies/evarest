@@ -6,6 +6,7 @@ import HeroNew from './components/sections/HeroNew';
 import ClientLogosNew from './components/sections/ClientLogosNew';
 import Services from './components/sections/Services';
 import Industries from './components/sections/Industries';
+import FeaturedProjects from './components/sections/FeaturedProjects';
 import CaseStudies from './components/sections/CaseStudies';
 import Capabilities from './components/sections/Capabilities';
 import ConsultationSection from './components/sections/ConsultationSection';
@@ -19,6 +20,7 @@ function App() {
         <ClientLogosNew />
         <Services />
         <Industries />
+        <FeaturedProjects />
         <CaseStudies />
         <Capabilities />
         <ConsultationSection />

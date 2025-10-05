@@ -234,7 +234,7 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4" role="navigation" aria-label="Social media links">
               <a
                 href="https://linkedin.com/company/evarest"
                 target="_blank"
@@ -242,7 +242,7 @@ const Footer = () => {
                 className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://twitter.com/evarest"
@@ -251,7 +251,7 @@ const Footer = () => {
                 className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://github.com/evarest"
@@ -260,7 +260,7 @@ const Footer = () => {
                 className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
                 aria-label="GitHub"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
 
