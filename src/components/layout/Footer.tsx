@@ -5,16 +5,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-navy text-white">
-      <div className="container-custom py-16">
-        <div className="grid lg:grid-cols-5 gap-12">
+    <footer className="text-white bg-brand-navy">
+      <div className="py-16 container-custom">
+        <div className="grid gap-12 lg:grid-cols-5">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="text-2xl font-bold mb-4">
+            <div className="mb-4 text-2xl font-bold">
               <span className="text-brand-blue-400">E</span>
               <span>varest</span>
             </div>
-            <p className="text-slate-300 text-sm mb-6">
+            <p className="mb-6 text-sm text-slate-300">
               Enterprise-Grade Engineering That Scales
             </p>
 
@@ -28,16 +28,16 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-2 text-sm text-slate-300">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <Phone className="flex-shrink-0 w-4 h-4" />
+                <span>+254723469406</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-slate-300">
-                <Mail className="w-4 h-4 flex-shrink-0" />
+                <Mail className="flex-shrink-0 w-4 h-4" />
                 <a
-                  href="mailto:sales@evarest.io"
-                  className="hover:text-brand-blue-400 transition-colors"
+                  href="mailto:sales@evarestke.com"
+                  className="transition-colors hover:text-brand-blue-400"
                 >
-                  sales@evarest.io
+                  contacts@evarestke.com
                 </a>
               </div>
             </div>
@@ -45,12 +45,12 @@ const Footer = () => {
 
           {/* Solutions */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Solutions</h3>
+            <h3 className="mb-4 font-semibold text-white">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#cloud-infrastructure"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Cloud & Infrastructure
                 </a>
@@ -58,7 +58,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#app-development"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Application Development
                 </a>
@@ -66,7 +66,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#data-ai"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Data & AI Engineering
                 </a>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#security-compliance"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Security & Compliance
                 </a>
@@ -82,7 +82,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#devops-sre"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   DevOps & SRE
                 </a>
@@ -90,7 +90,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#managed-services"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Managed Services
                 </a>
@@ -100,12 +100,12 @@ const Footer = () => {
 
           {/* Industries */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Industries</h3>
+            <h3 className="mb-4 font-semibold text-white">Industries</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#healthtech"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   HealthTech
                 </a>
@@ -113,7 +113,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#fintech"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   FinTech
                 </a>
@@ -121,7 +121,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#government"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Government/Public Sector
                 </a>
@@ -129,7 +129,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#saas"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Enterprise SaaS
                 </a>
@@ -139,12 +139,12 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <h3 className="mb-4 font-semibold text-white">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#about"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   About Us
                 </a>
@@ -152,7 +152,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#case-studies"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Case Studies
                 </a>
@@ -160,7 +160,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#careers"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Careers
                 </a>
@@ -168,7 +168,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#contact"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Contact
                 </a>
@@ -178,12 +178,12 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Resources</h3>
+            <h3 className="mb-4 font-semibold text-white">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="#security"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Security & Privacy
                 </a>
@@ -191,7 +191,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#terms"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Terms of Service
                 </a>
@@ -199,7 +199,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#sla"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Service Level Agreements
                 </a>
@@ -207,7 +207,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#dpa"
-                  className="text-slate-300 hover:text-brand-blue-400 transition-colors"
+                  className="transition-colors text-slate-300 hover:text-brand-blue-400"
                 >
                   Data Processing Agreement
                 </a>
@@ -217,7 +217,7 @@ const Footer = () => {
         </div>
 
         {/* Review Badges */}
-        <div className="mt-12 pt-8 border-t border-brand-blue-900/30">
+        <div className="pt-8 mt-12 border-t border-brand-blue-900/30">
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <ReviewBadge platform="Clutch" rating={5.0} reviews={120} />
             <ReviewBadge platform="G2" rating={4.9} reviews={89} />
@@ -226,8 +226,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-brand-blue-900/30">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 mt-12 border-t border-brand-blue-900/30">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             {/* Copyright */}
             <div className="text-sm text-slate-400">
               © {currentYear} Evarest. All rights reserved.
@@ -239,7 +239,7 @@ const Footer = () => {
                 href="https://linkedin.com/company/evarest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
+                className="p-2 transition-colors rounded-lg bg-white/5 hover:bg-brand-blue-500"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
@@ -248,7 +248,7 @@ const Footer = () => {
                 href="https://twitter.com/evarest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
+                className="p-2 transition-colors rounded-lg bg-white/5 hover:bg-brand-blue-500"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" aria-hidden="true" />
@@ -257,7 +257,7 @@ const Footer = () => {
                 href="https://github.com/evarest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-white/5 hover:bg-brand-blue-500 rounded-lg transition-colors"
+                className="p-2 transition-colors rounded-lg bg-white/5 hover:bg-brand-blue-500"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" aria-hidden="true" />
@@ -265,17 +265,17 @@ const Footer = () => {
             </div>
 
             {/* Legal Links */}
-            <div className="flex flex-col md:flex-row md:items-center gap-4 text-sm text-slate-400">
-              <a href="#privacy" className="hover:text-brand-blue-400 transition-colors">
+            <div className="flex flex-col gap-4 text-sm md:flex-row md:items-center text-slate-400">
+              <a href="#privacy" className="transition-colors hover:text-brand-blue-400">
                 Privacy Policy
               </a>
               <span className="hidden md:inline">•</span>
-              <a href="#cookies" className="hover:text-brand-blue-400 transition-colors">
+              <a href="#cookies" className="transition-colors hover:text-brand-blue-400">
                 Cookie Policy
               </a>
               <span className="hidden md:inline">•</span>
               <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-brand-cyan-500 rounded-full animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-brand-cyan-500 animate-pulse" />
                 <span>All Systems Operational</span>
               </div>
             </div>
