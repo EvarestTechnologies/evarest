@@ -314,7 +314,16 @@ const CaseStudies = () => {
             {/* Testimonial */}
             <Card hover={false} className="bg-white/10 border-white/20">
               <div className="flex items-start gap-4">
-                <div className={`${currentColor.text} text-5xl leading-none`}>"</div>
+                {/* Profile Image */}
+                <img
+                  src={`/images/testimonials/${selectedCase.testimonial.author.toLowerCase().replace(/ /g, '-')}.jpg`}
+                  alt={selectedCase.testimonial.author}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-white/30 flex-shrink-0"
+                  onError={(e) => {
+                    // Fallback to quote mark if image not found
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
                 <div className="flex-1">
                   <p className="text-lg text-white italic mb-4">
                     {selectedCase.testimonial.quote}
