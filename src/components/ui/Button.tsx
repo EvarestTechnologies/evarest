@@ -2,9 +2,9 @@ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'purple' | 'coral' | 'outline-purple';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'purple' | 'coral' | 'outline-purple' | 'outline';
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  onClick?: () => void;
+  onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
   href?: string;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
@@ -28,6 +28,7 @@ const Button: React.FC<ButtonProps> = ({
     purple: 'bg-brand-blue-500 hover:bg-brand-blue-600 text-white shadow-lg hover:shadow-xl hover:shadow-brand-blue-500/50 transform hover:-translate-y-0.5',
     coral: 'bg-brand-cyan-500 hover:bg-brand-cyan-600 text-white shadow-lg hover:shadow-xl hover:shadow-brand-cyan-500/50 transform hover:-translate-y-0.5',
     'outline-purple': 'bg-transparent hover:bg-brand-blue-500/10 text-white border-2 border-brand-blue-400 hover:border-brand-blue-300 shadow-md hover:shadow-lg',
+    outline: 'bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-300 hover:border-slate-400 shadow-sm hover:shadow-md',
   };
 
   const sizes = {
