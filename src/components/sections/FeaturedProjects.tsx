@@ -1,8 +1,47 @@
 import { ArrowRight, Smartphone, Tablet, TrendingUp } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 
 const FeaturedProjects = () => {
+  const [visibleProjects, setVisibleProjects] = useState<Set<number>>(new Set());
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    projectRefs.current.forEach((ref, index) => {
+      if (!ref) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            setVisibleProjects((prev) => {
+              const newSet = new Set(prev);
+              if (entry.isIntersecting) {
+                newSet.add(index);
+              } else {
+                newSet.delete(index);
+              }
+              return newSet;
+            });
+          });
+        },
+        {
+          threshold: 0.2, // Trigger when 20% of the element is visible
+          rootMargin: '-50px', // Trigger slightly before element enters viewport
+        }
+      );
+
+      observer.observe(ref);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
   const projects = [
     {
       id: 'mobile-seo-app',
@@ -81,17 +120,29 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => {
             const Icon = project.icon;
             const isEven = index % 2 === 0;
+            const isVisible = visibleProjects.has(index);
 
             return (
               <div
                 key={project.id}
+                ref={(el) => {
+                  projectRefs.current[index] = el;
+                }}
                 className={`grid lg:grid-cols-2 gap-12 items-center ${
                   isEven ? '' : 'lg:grid-flow-dense'
                 }`}
               >
                 {/* Device Mockup */}
                 <div
-                  className={`relative ${isEven ? 'lg:order-1' : 'lg:order-2'}`}
+                  className={`relative transition-all duration-1000 ease-out ${
+                    isEven ? 'lg:order-1' : 'lg:order-2'
+                  } ${
+                    isVisible
+                      ? 'translate-x-0 opacity-100'
+                      : isEven
+                      ? '-translate-x-20 opacity-0'
+                      : 'translate-x-20 opacity-0'
+                  }`}
                 >
                   <div className="relative group">
                     {/* Glow Effect */}
@@ -126,7 +177,17 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Project Details */}
-                <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                <div
+                  className={`transition-all duration-1000 ease-out ${
+                    isEven ? 'lg:order-2' : 'lg:order-1'
+                  } ${
+                    isVisible
+                      ? 'translate-x-0 opacity-100'
+                      : isEven
+                      ? 'translate-x-20 opacity-0'
+                      : '-translate-x-20 opacity-0'
+                  }`}
+                >
                   {/* Category Badge */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-brand-blue-100 rounded-xl flex items-center justify-center">
