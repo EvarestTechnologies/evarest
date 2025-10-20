@@ -22,6 +22,9 @@ export const SERVICES = [
     description: 'Scalable infrastructure that grows with your business',
     outcomes: ['Cost optimization', '99.9%+ uptime', 'Global availability'],
     compliance: ['SOC2', 'ISO 27001'],
+    category: 'infrastructure',
+    estimatedWeeks: 16,
+    estimatedCost: '$20K-$40K/mo',
   },
   {
     id: 'app-development',
@@ -30,6 +33,9 @@ export const SERVICES = [
     description: 'Modern applications that drive business value',
     outcomes: ['Faster time-to-market', 'Improved UX', 'Legacy migration'],
     compliance: [],
+    category: 'development',
+    estimatedWeeks: 12,
+    estimatedCost: '$15K-$35K/mo',
   },
   {
     id: 'data-ai',
@@ -38,6 +44,9 @@ export const SERVICES = [
     description: 'Turn data into competitive advantage',
     outcomes: ['Real-time analytics', 'ML models', 'Data pipeline automation'],
     compliance: [],
+    category: 'ai',
+    estimatedWeeks: 10,
+    estimatedCost: '$18K-$38K/mo',
   },
   {
     id: 'security-compliance',
@@ -46,6 +55,9 @@ export const SERVICES = [
     description: 'Enterprise security that enables business',
     outcomes: ['SOC2, HIPAA, PCI-DSS compliance', 'Zero-trust architecture', 'Security audits'],
     compliance: ['SOC2', 'HIPAA', 'PCI-DSS'],
+    category: 'security',
+    estimatedWeeks: 8,
+    estimatedCost: '$15K-$30K/mo',
   },
   {
     id: 'devops-sre',
@@ -54,6 +66,9 @@ export const SERVICES = [
     description: 'Reliability at scale',
     outcomes: ['Automated deployments', '24/7 monitoring', 'Incident response'],
     compliance: [],
+    category: 'infrastructure',
+    estimatedWeeks: 10,
+    estimatedCost: '$16K-$32K/mo',
   },
   {
     id: 'managed-services',
@@ -62,6 +77,9 @@ export const SERVICES = [
     description: 'Always-on operations',
     outcomes: ['SLA-backed support', 'Proactive monitoring', 'Cost predictability'],
     compliance: [],
+    category: 'support',
+    estimatedWeeks: 4,
+    estimatedCost: '$12K-$25K/mo',
   },
 ];
 
