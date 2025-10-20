@@ -41,7 +41,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
     : 0;
 
   return (
-    <div className="bg-gradient-to-br from-white via-brand-blue-50/30 to-white py-16" id="service-builder">
+    <div className="bg-gradient-to-br from-slate-100 via-brand-cyan-100/60 to-brand-blue-100/50 py-16" id="service-builder">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
