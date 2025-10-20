@@ -100,7 +100,7 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <section className="section bg-gradient-to-br from-white via-brand-blue-50/30 to-white">
+    <section className="section bg-gradient-to-br from-white via-brand-blue-50/30 to-white overflow-hidden">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
