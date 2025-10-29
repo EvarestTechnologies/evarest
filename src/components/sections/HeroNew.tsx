@@ -38,21 +38,15 @@ const HeroNew = () => {
 
           {/* Compliance Badges */}
           <div className="flex flex-wrap gap-2">
-            <ComplianceBadge name="ISO 27001" variant="compact" />
-            <ComplianceBadge name="SOC2" variant="compact" />
-            <ComplianceBadge name="HIPAA" variant="compact" />
+            <ComplianceBadge name="ISO 27001" logoSrc="/iso.png" />
+            <ComplianceBadge name="SOC2" logoSrc="/soc2.png" />
+            <ComplianceBadge name="HIPAA" logoSrc="/hipaa.jpg" />
           </div>
         </div>
 
         {/* Main Hero Content - Centered */}
         <div className="max-w-5xl mx-auto space-y-8 text-center">
-          {/* Positioning Badge */}
-          <div className="animate-slide-up">
-            <div className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-full bg-brand-blue-500/20 border-brand-blue-400/30 text-brand-blue-300 backdrop-blur-sm">
-              <Shield className="w-4 h-4 mr-2" />
-              Enterprise Engineering Solutions
-            </div>
-          </div>
+          
 
           {/* Headline */}
           <h1 className="text-5xl font-bold leading-tight lg:text-7xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
