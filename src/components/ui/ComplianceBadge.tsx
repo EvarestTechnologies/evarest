@@ -5,6 +5,7 @@ interface ComplianceBadgeProps {
   icon?: 'shield' | 'check';
   variant?: 'default' | 'compact';
   className?: string;
+  logoSrc?: string;
 }
 
 const ComplianceBadge = ({
@@ -12,8 +13,19 @@ const ComplianceBadge = ({
   icon = 'shield',
   variant = 'default',
   className = '',
+  logoSrc,
 }: ComplianceBadgeProps) => {
   const IconComponent = icon === 'shield' ? Shield : CheckCircle2;
+
+  if (logoSrc) {
+    return (
+      <div
+        className={`inline-flex items-center justify-center bg-transparent transition-all duration-200 ${className}`}
+      >
+        <img src={logoSrc} alt={`${name} logo`} className="h-20" />
+      </div>
+    );
+  }
 
   if (variant === 'compact') {
     return (
