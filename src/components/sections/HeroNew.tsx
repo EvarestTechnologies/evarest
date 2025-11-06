@@ -1,4 +1,3 @@
-import { Shield } from 'lucide-react';
 import Button from '../ui/Button';
 import CountUp from '../ui/CountUp';
 import ReviewBadge from '../ui/ReviewBadge';
