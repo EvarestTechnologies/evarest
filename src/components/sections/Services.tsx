@@ -233,23 +233,22 @@ const Services = () => {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16 border-b border-brand-gray-200">
-          {serviceCategories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-4 font-semibold tracking-wide transition-all duration-300 relative ${
-                activeCategory === category.id
-                  ? "text-brand-blue-600"
-                  : "text-slate-500 hover:text-slate-700"
-              }`}
-            >
-              {category.name}
-              {activeCategory === category.id && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-blue-600"></div>
-              )}
-            </button>
-          ))}
+        <div className="flex justify-center mb-16">
+          <div className="inline-flex flex-wrap justify-center gap-3 bg-white rounded-xl px-3 py-3 shadow-sm border border-slate-200">
+            {serviceCategories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-8 py-3.5 font-medium tracking-wide transition-all duration-300 rounded-xl ${
+                  activeCategory === category.id
+                    ? "bg-brand-blue-100 text-brand-blue-700 shadow-sm"
+                    : "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-800"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Services Grid */}
