@@ -222,40 +222,43 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-slate-50">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            <span className="text-slate-800">Enterprise </span>
-            <span className="text-brand-blue-600">Solutions</span>
-          </h2>
-          <p className="text-xl text-slate-600">
-            We offer a comprehensive suite of services to meet your needs.
-          </p>
-        </div>
+        {/* Card Container */}
+        <div className="bg-gradient-to-br from-brand-blue-50 to-brand-cyan-50 rounded-3xl p-8 lg:p-12 shadow-lg">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-slate-800">Enterprise </span>
+              <span className="text-brand-blue-600">Solutions</span>
+            </h2>
+            <p className="text-xl text-slate-600">
+              We offer a comprehensive suite of services to meet your needs.
+            </p>
+          </div>
 
-        {/* Category Tabs */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex flex-wrap justify-center gap-3 bg-white rounded-xl px-3 py-3 shadow-sm border border-slate-200">
-            {serviceCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-8 py-3.5 font-medium tracking-wide transition-all duration-300 rounded-xl ${
-                  activeCategory === category.id
-                    ? "bg-brand-blue-100 text-brand-blue-700 shadow-sm"
-                    : "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-800"
-                }`}
-              >
-                {category.name}
-              </button>
+          {/* Category Tabs */}
+          <div className="flex justify-center mb-16">
+            <div className="inline-flex flex-wrap justify-center gap-3 bg-white rounded-xl px-3 py-3 shadow-sm border border-slate-200">
+              {serviceCategories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`px-8 py-3.5 font-medium tracking-wide transition-all duration-300 rounded-xl ${
+                    activeCategory === category.id
+                      ? "bg-brand-blue-100 text-brand-blue-700 shadow-sm"
+                      : "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-800"
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activeCategoryData?.services.map((service, index) => (
+              <ServiceItem key={`${service.title}-${index}`} {...service} />
             ))}
           </div>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeCategoryData?.services.map((service, index) => (
-            <ServiceItem key={`${service.title}-${index}`} {...service} />
-          ))}
         </div>
       </div>
     </section>
