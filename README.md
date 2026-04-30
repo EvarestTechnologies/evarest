@@ -231,7 +231,7 @@ This is a production website. For changes:
 1. Create a feature branch
 2. Test locally with `npm run dev`
 3. Build with `npm run build`
-4. Submit for review
+4. Submit for review.
 
 ---
 
