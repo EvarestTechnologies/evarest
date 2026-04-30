@@ -1,4 +1,4 @@
-import { Heart, DollarSign, Building, Grid, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { Heart, DollarSign, Building, Grid, Shield, ArrowRight } from 'lucide-react';
 import Badge from '../ui/Badge';
 import { INDUSTRIES } from '../../utils/constants';
 
