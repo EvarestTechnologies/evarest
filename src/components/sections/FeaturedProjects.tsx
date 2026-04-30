@@ -1,4 +1,4 @@
-import { ArrowRight, Smartphone, Tablet, TrendingUp } from 'lucide-react';
+import { ArrowRight, Smartphone, Tablet, TrendingUp, CheckCircle2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
@@ -28,8 +28,8 @@ const FeaturedProjects = () => {
           });
         },
         {
-          threshold: 0.2, // Trigger when 20% of the element is visible
-          rootMargin: '-50px', // Trigger slightly before element enters viewport
+          threshold: 0.2,
+          rootMargin: '-50px',
         }
       );
 
@@ -100,23 +100,23 @@ const FeaturedProjects = () => {
   ];
 
   return (
-    <section className="section bg-gradient-to-br from-white via-brand-blue-50/30 to-white overflow-hidden">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="primary" className="mb-4">
+        <div className="max-w-3xl mx-auto mb-20 text-center">
+          <Badge variant="primary" className="mb-6 font-semibold">
             Featured Work
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight lg:text-5xl text-slate-900">
             Mobile & Tablet Solutions That Drive Results
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-lg leading-relaxed text-slate-600 lg:text-xl">
             Enterprise-grade applications designed for performance, scalability, and exceptional user experience
           </p>
         </div>
 
         {/* Projects */}
-        <div className="space-y-24">
+        <div className="space-y-32">
           {projects.map((project, index) => {
             const Icon = project.icon;
             const isEven = index % 2 === 0;
@@ -128,7 +128,7 @@ const FeaturedProjects = () => {
                 ref={(el) => {
                   projectRefs.current[index] = el;
                 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
+                className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
                   isEven ? '' : 'lg:grid-flow-dense'
                 }`}
               >
@@ -146,28 +146,28 @@ const FeaturedProjects = () => {
                 >
                   <div className="relative group">
                     {/* Glow Effect */}
-                    <div className="absolute -inset-4 bg-gradient-to-r from-brand-blue-500/20 to-brand-cyan-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
+                    <div className="absolute -inset-8 bg-gradient-to-r from-brand-blue-500/20 via-brand-cyan-500/20 to-brand-blue-500/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
                     {/* Device Image */}
                     <div className="relative">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-auto transform transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-auto transition-transform duration-700 transform group-hover:scale-105"
                       />
                     </div>
 
                     {/* Floating Stats */}
-                    <div className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-brand-blue-100 hidden lg:block">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-brand-blue-500 to-brand-cyan-500 rounded-xl flex items-center justify-center">
-                          <TrendingUp className="w-6 h-6 text-white" />
+                    <div className="absolute hidden p-5 bg-white border-2 shadow-2xl -top-6 -right-6 rounded-2xl border-brand-blue-200 lg:block">
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center justify-center rounded-xl w-14 h-14 bg-gradient-to-br from-brand-blue-500 to-brand-cyan-500">
+                          <TrendingUp className="w-7 h-7 text-white" />
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-slate-900">
+                          <div className="text-3xl font-bold text-slate-900">
                             {project.metrics[0].value}
                           </div>
-                          <div className="text-xs text-slate-600">
+                          <div className="text-xs font-medium text-slate-600">
                             {project.metrics[0].label}
                           </div>
                         </div>
@@ -189,41 +189,45 @@ const FeaturedProjects = () => {
                   }`}
                 >
                   {/* Category Badge */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-brand-blue-100 rounded-xl flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-brand-blue-600" />
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center justify-center rounded-xl w-14 h-14 bg-brand-blue-100">
+                      <Icon className="w-7 h-7 text-brand-blue-600" />
                     </div>
-                    <Badge variant="primary">{project.category}</Badge>
+                    <Badge variant="primary" className="font-semibold">{project.category}</Badge>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+                  <h3 className="mb-4 text-3xl font-bold lg:text-4xl text-slate-900">
                     {project.title}
                   </h3>
-                  <p className="text-lg text-slate-600 mb-6">
+                  <p className="mb-6 text-lg leading-relaxed text-slate-600">
                     {project.description}
                   </p>
 
                   {/* Client */}
-                  <div className="mb-6">
-                    <span className="text-sm text-slate-500">Client: </span>
-                    <span className="font-semibold text-slate-900">
+                  <div className="mb-8">
+                    <span className="text-sm font-medium text-slate-500">Client: </span>
+                    <span className="text-sm font-bold text-slate-900">
                       {project.client}
                     </span>
                   </div>
 
                   {/* Key Highlights */}
-                  <div className="mb-6">
-                    <h4 className="font-bold text-slate-900 mb-3">
+                  <div className="mb-8">
+                    <h4 className="mb-4 text-sm font-bold text-slate-900">
                       Key Features:
                     </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
                       {project.highlights.map((highlight, idx) => (
                         <li
                           key={idx}
                           className="flex items-start text-sm text-slate-600"
                         >
-                          <span className="inline-block w-1.5 h-1.5 bg-brand-cyan-500 rounded-full mt-2 mr-2 flex-shrink-0" />
+                          <div className="flex-shrink-0 mt-0.5 mr-2.5">
+                            <div className="flex items-center justify-center w-5 h-5 rounded-full bg-brand-cyan-100">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-brand-cyan-600" />
+                            </div>
+                          </div>
                           {highlight}
                         </li>
                       ))}
@@ -231,16 +235,16 @@ const FeaturedProjects = () => {
                   </div>
 
                   {/* Metrics Grid */}
-                  <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="grid grid-cols-3 gap-4 mb-8">
                     {project.metrics.map((metric, idx) => (
                       <div
                         key={idx}
-                        className="bg-gradient-to-br from-brand-blue-50 to-brand-cyan-50 rounded-xl p-4 text-center"
+                        className="p-4 text-center transition-all duration-300 border-2 rounded-xl bg-gradient-to-br from-brand-blue-50 to-brand-cyan-50 border-brand-blue-100 hover:border-brand-blue-300 hover:shadow-lg"
                       >
-                        <div className="text-2xl font-bold text-brand-blue-600 mb-1">
+                        <div className="mb-1 text-2xl font-bold text-brand-blue-600">
                           {metric.value}
                         </div>
-                        <div className="text-xs text-slate-600">
+                        <div className="text-xs font-medium text-slate-600">
                           {metric.label}
                         </div>
                       </div>
@@ -248,13 +252,13 @@ const FeaturedProjects = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="font-bold text-slate-900 mb-3">
+                  <div className="mb-8">
+                    <h4 className="mb-3 text-sm font-bold text-slate-900">
                       Technologies Used:
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" size="sm">
+                        <Badge key={tech} variant="secondary" size="sm" className="font-medium">
                           {tech}
                         </Badge>
                       ))}
@@ -262,23 +266,23 @@ const FeaturedProjects = () => {
                   </div>
 
                   {/* Results */}
-                  <div className="bg-gradient-to-r from-brand-blue-500 to-brand-cyan-500 rounded-2xl p-6 text-white mb-6">
-                    <h4 className="font-bold mb-3">Business Impact:</h4>
+                  <div className="p-6 mb-8 text-white rounded-2xl bg-gradient-to-r from-brand-blue-600 to-brand-cyan-600">
+                    <h4 className="mb-4 font-bold">Business Impact:</h4>
                     <div className="grid grid-cols-3 gap-4 text-center">
                       <div>
-                        <div className="text-lg font-bold">
+                        <div className="mb-1 text-lg font-bold">
                           {project.results.performance}
                         </div>
                         <div className="text-xs opacity-90">Performance</div>
                       </div>
                       <div>
-                        <div className="text-lg font-bold">
+                        <div className="mb-1 text-lg font-bold">
                           {project.results.adoption}
                         </div>
                         <div className="text-xs opacity-90">Adoption</div>
                       </div>
                       <div>
-                        <div className="text-lg font-bold">
+                        <div className="mb-1 text-lg font-bold">
                           {project.results.impact}
                         </div>
                         <div className="text-xs opacity-90">Impact</div>
@@ -287,9 +291,9 @@ const FeaturedProjects = () => {
                   </div>
 
                   {/* CTA */}
-                  <Button variant="purple" size="lg" href="#consultation">
+                  <Button variant="purple" size="lg" href="#consultation" className="group">
                     Discuss Your Project
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </div>
               </div>
@@ -298,16 +302,17 @@ const FeaturedProjects = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="mt-20 text-center bg-gradient-to-r from-brand-navy to-brand-blue-900 rounded-3xl p-12">
-          <h3 className="text-3xl font-bold text-white mb-4">
+        <div className="p-12 mt-24 text-center border-2 bg-gradient-to-br from-brand-navy to-brand-blue-900 rounded-3xl border-brand-blue-700">
+          <h3 className="mb-4 text-3xl font-bold text-white">
             Have a Mobile or Tablet App Idea?
           </h3>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto mb-8 text-xl text-slate-300">
             Let's build a world-class application that your users will love and your business will profit from
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="purple" size="xl" href="#consultation">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Button variant="purple" size="xl" href="#consultation" className="group">
               Start Your Project
+              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="outline-purple" size="xl" href="#case-studies">
               View All Case Studies

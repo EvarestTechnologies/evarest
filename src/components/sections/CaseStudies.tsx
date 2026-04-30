@@ -18,10 +18,10 @@ const CaseStudies = () => {
       image: 'healthtech',
       challenge: {
         title: 'The Challenge',
-        description: 'Legacy EHR system unable to scale during COVID-19 surge. HIPAA compliance concerns, 3x increase in patient volume, and critical uptime requirements.',
+        description: 'Legacy EHR system unable to scale during COVID-19 surge. Compliance concerns, 3x increase in patient volume, and critical uptime requirements.',
         points: [
           'Legacy infrastructure struggling with 3x patient volume spike',
-          'HIPAA compliance audit failures',
+          'Healthcare compliance audit gaps',
           'Integration with 15+ third-party EHR systems required',
           '99.99% uptime requirement for critical care scenarios',
         ],
@@ -32,7 +32,7 @@ const CaseStudies = () => {
         points: [
           'AWS cloud migration with multi-region failover',
           'Microservices architecture for independent scaling',
-          'End-to-end encryption with HIPAA-compliant key management',
+          'End-to-end encryption with enterprise-grade key management',
           'Real-time compliance monitoring and automated auditing',
           'Zero-downtime migration with blue-green deployment',
         ],
@@ -42,7 +42,7 @@ const CaseStudies = () => {
         metrics: [
           { value: '60%', label: 'Infrastructure Cost Reduction', detail: '$2.4M annually' },
           { value: '99.99%', label: 'Uptime Achieved', detail: 'During 3x volume spike' },
-          { value: '0', label: 'HIPAA Audit Findings', detail: 'Passed with zero issues' },
+          { value: '100%', label: 'Compliance Audit Pass', detail: 'All requirements met' },
           { value: '15M+', label: 'Consultations Enabled', detail: 'In first 6 months' },
         ],
       },

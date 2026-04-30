@@ -6,12 +6,7 @@ export const COMPANY_INFO = {
 };
 
 // Trust Indicators
-export const TRUST_METRICS = [
-  { value: '$50M+', label: 'Client Revenue Enabled' },
-  { value: '99.9%', label: 'Uptime SLA' },
-  { value: 'ISO 27001', label: 'Certified' },
-  { value: '24/7', label: 'Global Support' },
-];
+export const TRUST_METRICS: { value: string; label: string }[] = [];
 
 // Services
 export const SERVICES = [
@@ -20,8 +15,8 @@ export const SERVICES = [
     name: 'Cloud & Infrastructure Services',
     icon: 'Cloud',
     description: 'Scalable infrastructure that grows with your business',
-    outcomes: ['Cost optimization', '99.9%+ uptime', 'Global availability'],
-    compliance: ['SOC2', 'ISO 27001'],
+    outcomes: ['Cost optimization', 'High availability', 'Global deployment'],
+    compliance: [],
     category: 'infrastructure',
     estimatedWeeks: 16,
     estimatedCost: '$20K-$40K/mo',
@@ -53,8 +48,8 @@ export const SERVICES = [
     name: 'Security & Compliance Engineering',
     icon: 'Shield',
     description: 'Enterprise security that enables business',
-    outcomes: ['SOC2, HIPAA, PCI-DSS compliance', 'Zero-trust architecture', 'Security audits'],
-    compliance: ['SOC2', 'HIPAA', 'PCI-DSS'],
+    outcomes: ['Enterprise compliance', 'Zero-trust architecture', 'Security audits'],
+    compliance: [],
     category: 'security',
     estimatedWeeks: 8,
     estimatedCost: '$15K-$30K/mo',
@@ -90,32 +85,32 @@ export const INDUSTRIES = [
     name: 'HealthTech',
     icon: 'Heart',
     gradient: 'from-brand-cyan-500 to-brand-blue-600',
-    compliance: ['HIPAA', 'FDA', 'GDPR', 'HL7/FHIR'],
-    stats: ['500K+ patient records secured', 'HIPAA compliant since 2018'],
+    compliance: [],
+    stats: ['Secure healthcare solutions', 'HIPAA-ready infrastructure'],
   },
   {
     id: 'fintech',
     name: 'FinTech',
     icon: 'DollarSign',
     gradient: 'from-brand-blue-500 to-brand-cyan-500',
-    compliance: ['PCI-DSS', 'SOC2 Type II', 'SOX'],
-    stats: ['$2B+ in payments processed', '99.99% transaction success rate'],
+    compliance: [],
+    stats: ['Secure payment processing', 'Financial-grade security'],
   },
   {
     id: 'government',
     name: 'Government/Public Sector',
     icon: 'Building',
     gradient: 'from-brand-blue-600 to-brand-blue-700',
-    compliance: ['FedRAMP', 'FISMA', 'Section 508'],
-    stats: ['FedRAMP Authorized', 'Trusted by 5+ government agencies'],
+    compliance: [],
+    stats: ['Government-grade security', 'Trusted public sector partner'],
   },
   {
     id: 'saas',
     name: 'Enterprise SaaS',
     icon: 'Grid',
     gradient: 'from-brand-blue-400 to-brand-cyan-400',
-    compliance: ['SOC2', 'ISO 27001', 'GDPR'],
-    stats: ['10M+ end users supported', '99.9% uptime SLA'],
+    compliance: [],
+    stats: ['Scalable SaaS platforms', 'Enterprise-ready solutions'],
   },
 ];
 
