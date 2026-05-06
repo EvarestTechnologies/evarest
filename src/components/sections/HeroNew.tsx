@@ -1,4 +1,4 @@
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRightIcon, BoltIcon } from '@heroicons/react/24/outline';
 import Button from '../ui/Button';
 
 const HeroNew = () => {
@@ -28,7 +28,7 @@ const HeroNew = () => {
           {/* Positioning Badge */}
           <div className="animate-slide-up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold border rounded-full bg-gradient-to-r from-brand-blue-500/10 to-brand-cyan-500/10 border-brand-blue-500/20 text-brand-blue-300 backdrop-blur-md shadow-lg">
-              <Zap className="w-4 h-4" />
+              <BoltIcon className="w-4 h-4" />
               Enterprise Engineering Solutions
             </div>
           </div>
@@ -57,7 +57,7 @@ const HeroNew = () => {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-scale-in" style={{ animationDelay: '0.3s' }}>
             <Button variant="purple" size="xl" href="#consultation" className="group">
               Schedule Free Consultation
-              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="outline-purple" size="xl" href="#case-studies">
               View Case Studies

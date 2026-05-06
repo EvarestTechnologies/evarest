@@ -1,4 +1,5 @@
-import { Linkedin, Twitter, Github, Mail, Phone, MapPin } from 'lucide-react';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { Linkedin, Twitter, Github } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,21 +24,21 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-4">
               <div className="flex items-start space-x-3 text-sm text-slate-400 group">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-blue-400" />
+                <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-blue-400" />
                 <div>
                   <div className="font-semibold text-white">Headquarters</div>
                   <div>Nairobi, Kenya</div>
                 </div>
               </div>
               <a href="tel:+254723469406" className="flex items-center space-x-3 text-sm transition-colors text-slate-400 hover:text-brand-blue-400 group">
-                <Phone className="flex-shrink-0 w-4 h-4 text-brand-blue-400" />
+                <PhoneIcon className="flex-shrink-0 w-4 h-4 text-brand-blue-400" />
                 <span>+254723469406</span>
               </a>
               <a
                 href="mailto:contact@evarestke.com"
                 className="flex items-center space-x-3 text-sm transition-colors text-slate-400 hover:text-brand-blue-400 group"
               >
-                <Mail className="flex-shrink-0 w-4 h-4 text-brand-blue-400" />
+                <EnvelopeIcon className="flex-shrink-0 w-4 h-4 text-brand-blue-400" />
                 <span>contact@evarestke.com</span>
               </a>
             </div>

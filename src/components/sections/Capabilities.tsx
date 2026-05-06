@@ -1,4 +1,4 @@
-import { Award, Users, Globe } from 'lucide-react';
+import { TrophyIcon, UserGroupIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import CertificationCard from '../ui/CertificationCard';
 
 const Capabilities = () => {
@@ -35,7 +35,7 @@ const Capabilities = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="text-center group">
             <div className="inline-flex p-4 bg-gradient-to-br from-brand-blue-500 to-brand-cyan-500 rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Users className="w-8 h-8 text-white" />
+              <UserGroupIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-2xl font-bold text-slate-900 mb-2">
               Senior Engineers
@@ -45,7 +45,7 @@ const Capabilities = () => {
 
           <div className="text-center group">
             <div className="inline-flex p-4 bg-gradient-to-br from-brand-blue-500 to-brand-cyan-500 rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Award className="w-8 h-8 text-white" />
+              <TrophyIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-2xl font-bold text-slate-900 mb-2">
               Solutions Architects
@@ -55,7 +55,7 @@ const Capabilities = () => {
 
           <div className="text-center group">
             <div className="inline-flex p-4 bg-gradient-to-br from-brand-blue-500 to-brand-cyan-500 rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
-              <Globe className="w-8 h-8 text-white" />
+              <GlobeAltIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-2xl font-bold text-slate-900 mb-2">
               Global Support

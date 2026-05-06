@@ -1,4 +1,4 @@
-import { ArrowRight, Smartphone, Tablet, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { ArrowRightIcon, DevicePhoneMobileIcon, DeviceTabletIcon, ArrowTrendingUpIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
@@ -51,7 +51,7 @@ const FeaturedProjects = () => {
       description: 'Native mobile app for real-time SEO performance tracking and marketing analytics with beautiful data visualizations.',
       image: '/mobile-evarest.png',
       deviceType: 'mobile',
-      icon: Smartphone,
+      icon: DevicePhoneMobileIcon,
       metrics: [
         { label: 'Daily Active Users', value: '50K+' },
         { label: 'Data Points Tracked', value: '1M+' },
@@ -78,7 +78,7 @@ const FeaturedProjects = () => {
       description: 'Comprehensive analytics platform for enterprise data visualization, featuring interactive charts and real-time business intelligence.',
       image: '/tablet-evarest.png',
       deviceType: 'tablet',
-      icon: Tablet,
+      icon: DeviceTabletIcon,
       metrics: [
         { label: 'Data Sources', value: '15+' },
         { label: 'Concurrent Users', value: '5K+' },
@@ -161,7 +161,7 @@ const FeaturedProjects = () => {
                     <div className="absolute hidden p-5 bg-white border-2 shadow-2xl -top-6 -right-6 rounded-2xl border-brand-blue-200 lg:block">
                       <div className="flex items-center gap-4">
                         <div className="flex items-center justify-center rounded-xl w-14 h-14 bg-gradient-to-br from-brand-blue-500 to-brand-cyan-500">
-                          <TrendingUp className="w-7 h-7 text-white" />
+                          <ArrowTrendingUpIcon className="w-7 h-7 text-white" />
                         </div>
                         <div>
                           <div className="text-3xl font-bold text-slate-900">
@@ -225,7 +225,7 @@ const FeaturedProjects = () => {
                         >
                           <div className="flex-shrink-0 mt-0.5 mr-2.5">
                             <div className="flex items-center justify-center w-5 h-5 rounded-full bg-brand-cyan-100">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-brand-cyan-600" />
+                              <CheckCircleIcon className="w-3.5 h-3.5 text-brand-cyan-600" />
                             </div>
                           </div>
                           {highlight}
@@ -293,7 +293,7 @@ const FeaturedProjects = () => {
                   {/* CTA */}
                   <Button variant="purple" size="lg" href="#consultation" className="group">
                     Discuss Your Project
-                    <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                    <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </div>
               </div>
@@ -312,7 +312,7 @@ const FeaturedProjects = () => {
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button variant="purple" size="xl" href="#consultation" className="group">
               Start Your Project
-              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="outline-purple" size="xl" href="#case-studies">
               View All Case Studies

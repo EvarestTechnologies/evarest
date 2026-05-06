@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import Card from '../ui/Card';
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
@@ -287,7 +287,7 @@ const CaseStudies = () => {
                 <ul className="space-y-2">
                   {selectedCase.solution.points.map((point, idx) => (
                     <li key={idx} className="flex items-start text-sm text-slate-300">
-                      <CheckCircle className={`w-4 h-4 ${currentColor.text} mt-0.5 mr-2 flex-shrink-0`} />
+                      <CheckCircleIcon className={`w-4 h-4 ${currentColor.text} mt-0.5 mr-2 flex-shrink-0`} />
                       {point}
                     </li>
                   ))}
@@ -368,7 +368,7 @@ const CaseStudies = () => {
           </p>
           <Button variant="purple" size="lg" href="#consultation">
             Schedule Your Consultation
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRightIcon className="w-5 h-5 ml-2" />
           </Button>
         </div>
       </div>

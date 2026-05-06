@@ -1,13 +1,13 @@
-import { Heart, DollarSign, Building, Grid, Shield, ArrowRight } from 'lucide-react';
+import { HeartIcon, CurrencyDollarIcon, BuildingOfficeIcon, Squares2X2Icon, ShieldCheckIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import Badge from '../ui/Badge';
 import { INDUSTRIES } from '../../utils/constants';
 
 const Industries = () => {
   const iconMap = {
-    Heart,
-    DollarSign,
-    Building,
-    Grid,
+    Heart: HeartIcon,
+    DollarSign: CurrencyDollarIcon,
+    Building: BuildingOfficeIcon,
+    Grid: Squares2X2Icon,
   };
 
   return (
@@ -36,7 +36,7 @@ const Industries = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand-blue-500/10 to-brand-cyan-500/10 border border-brand-blue-500/20 rounded-full text-sm font-semibold text-brand-blue-300 backdrop-blur-md mb-6">
-            <Shield className="w-4 h-4" />
+            <ShieldCheckIcon className="w-4 h-4" />
             <span>Compliance-First Approach</span>
           </div>
 
@@ -121,7 +121,7 @@ const Industries = () => {
                     {/* Hover Arrow */}
                     <div className="flex items-center gap-2 text-brand-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300">
                       <span className="text-sm font-semibold">Learn More</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
 
@@ -143,7 +143,7 @@ const Industries = () => {
             className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-brand-blue-600 to-brand-cyan-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-brand-blue-600/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105"
           >
             <span>Discuss Your Industry Needs</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </div>

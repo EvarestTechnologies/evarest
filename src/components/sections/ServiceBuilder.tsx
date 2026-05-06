@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check, Calculator, Clock, Users, DollarSign, ArrowRight } from 'lucide-react';
+import { CheckIcon, CalculatorIcon, ClockIcon, UserGroupIcon, CurrencyDollarIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import Button from '../ui/Button';
 
 interface Service {
@@ -59,7 +59,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
             <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-brand-blue-500 rounded-lg flex items-center justify-center">
-                  <Calculator className="w-5 h-5 text-white" />
+                  <CalculatorIcon className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900">Select Services</h3>
               </div>
@@ -89,17 +89,17 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
                         <h4 className="font-semibold text-slate-900">{service.name}</h4>
                         <div className="flex gap-4 mt-1 text-sm text-slate-600">
                           <span className="flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5" />
+                            <ClockIcon className="w-3.5 h-3.5" />
                             {service.estimatedWeeks} weeks
                           </span>
                           <span className="flex items-center gap-1">
-                            <DollarSign className="w-3.5 h-3.5" />
+                            <CurrencyDollarIcon className="w-3.5 h-3.5" />
                             {service.estimatedCost}
                           </span>
                         </div>
                       </div>
                       {isSelected && (
-                        <Check className="w-6 h-6 text-brand-blue-500 flex-shrink-0" />
+                        <CheckIcon className="w-6 h-6 text-brand-blue-500 flex-shrink-0" />
                       )}
                     </label>
                   );
@@ -115,7 +115,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
 
               {selectedServices.length === 0 ? (
                 <div className="text-center py-8">
-                  <Calculator className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                  <CalculatorIcon className="w-16 h-16 mx-auto mb-4 opacity-50" />
                   <p className="text-white/90 text-sm">
                     Select services to see your estimate
                   </p>
@@ -130,7 +130,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
                     <div className="space-y-2">
                       {selectedServices.map((service) => (
                         <div key={service.id} className="flex items-center gap-2 text-sm">
-                          <Check className="w-4 h-4 flex-shrink-0" />
+                          <CheckIcon className="w-4 h-4 flex-shrink-0" />
                           <span className="line-clamp-1">{service.name}</span>
                         </div>
                       ))}
@@ -143,7 +143,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
                   <div className="space-y-4">
                     <div>
                       <div className="flex items-center gap-2 text-sm text-white/80 mb-1">
-                        <Clock className="w-4 h-4" />
+                        <ClockIcon className="w-4 h-4" />
                         Estimated Timeline
                       </div>
                       <p className="text-3xl font-bold">
@@ -156,7 +156,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
 
                     <div>
                       <div className="flex items-center gap-2 text-sm text-white/80 mb-1">
-                        <Users className="w-4 h-4" />
+                        <UserGroupIcon className="w-4 h-4" />
                         Team Size
                       </div>
                       <p className="text-3xl font-bold">{avgTeamSize}-{avgTeamSize + 3} engineers</p>
@@ -164,7 +164,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
 
                     <div>
                       <div className="flex items-center gap-2 text-sm text-white/80 mb-1">
-                        <DollarSign className="w-4 h-4" />
+                        <CurrencyDollarIcon className="w-4 h-4" />
                         Investment Range
                       </div>
                       <p className="text-3xl font-bold">
@@ -186,7 +186,7 @@ const ServiceBuilder = ({ services }: ServiceBuilderProps) => {
                     className="w-full group"
                   >
                     Get Detailed Proposal
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
 
                   <p className="text-xs text-white/70 text-center mt-4">

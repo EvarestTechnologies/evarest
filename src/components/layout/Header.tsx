@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import Button from '../ui/Button';
 import { NAV_LINKS } from '../../utils/constants';
 
@@ -61,7 +61,7 @@ const Header = () => {
                   onMouseEnter={() => setOpenDropdown('services')}
                 >
                   <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDownIcon className="w-4 h-4" />
                 </button>
                 <div
                   className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border transition-all duration-200 ${
@@ -95,7 +95,7 @@ const Header = () => {
                   onMouseEnter={() => setOpenDropdown('industries')}
                 >
                   <span>Industries</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDownIcon className="w-4 h-4" />
                 </button>
                 <div
                   className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border transition-all duration-200 ${
@@ -163,9 +163,9 @@ const Header = () => {
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <XMarkIcon className="w-6 h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Bars3Icon className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -198,7 +198,7 @@ const Header = () => {
               className="p-2 text-slate-700 hover:text-blue-500 transition-colors"
               aria-label="Close menu"
             >
-              <X className="w-6 h-6" />
+              <XMarkIcon className="w-6 h-6" />
             </button>
           </div>
 
@@ -212,7 +212,7 @@ const Header = () => {
                   className="flex items-center justify-between w-full text-slate-800 font-semibold mb-3"
                 >
                   <span>Services</span>
-                  <ChevronDown
+                  <ChevronDownIcon
                     className={`w-5 h-5 transition-transform ${
                       openDropdown === 'mobile-services' ? 'rotate-180' : ''
                     }`}
@@ -245,7 +245,7 @@ const Header = () => {
                   className="flex items-center justify-between w-full text-slate-800 font-semibold mb-3"
                 >
                   <span>Industries</span>
-                  <ChevronDown
+                  <ChevronDownIcon
                     className={`w-5 h-5 transition-transform ${
                       openDropdown === 'mobile-industries' ? 'rotate-180' : ''
                     }`}
