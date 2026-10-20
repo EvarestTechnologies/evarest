@@ -12,11 +12,13 @@ export function Reveal({
   curtain = false,
   className = "",
   children,
+  ...rest
 }: {
   as?: ElementType;
   curtain?: boolean;
   className?: string;
   children: ReactNode;
+  "aria-labelledby"?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotionPref();
@@ -52,7 +54,7 @@ export function Reveal({
       ? "opacity-0 translate-y-6"
       : "";
   return (
-    <Tag ref={ref} className={`${motion} ${look} ${className}`.trim()}>
+    <Tag ref={ref} className={`${motion} ${look} ${className}`.trim()} {...rest}>
       {children}
     </Tag>
   );
