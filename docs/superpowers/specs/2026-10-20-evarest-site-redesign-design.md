@@ -1,7 +1,7 @@
 # evarestke.com redesign: design spec
 
 **Date:** 2026-10-20
-**Status:** Draft for founder approval
+**Status:** Approved (2026-10-20)
 **Branch:** `redesign/site-v2`
 **Mockup (the visual source of truth):** `docs/design/mockup/`. To view it, run
 `python3 -m http.server 8000` inside `docs/design/mockup/` and open
@@ -282,12 +282,11 @@ custom cursor, no autoplaying audio or video.
   state are tested, and every motion component renders a still version under reduced
   motion.
 
-## 10. Open items for the founders
+## 10. Founder decisions (2026-10-20)
 
-1. Each founder checks their own one-line bio on the About page.
-2. Wording of the two "Next" stops on the road map: "Testing what ZEYA changes" and
-   "First partners, real users".
-3. The Kintaraa screenshot shows "Call HAK 1195", Kenya's GBV helpline. Keep or blank.
-4. A Web3Forms access key for contact@evarestke.com.
-5. Larger founder portraits and a 4K hero photo, when available.
-6. Confirm the Open Chat Studio contribution claim (merged pull requests by team members).
+1. Founder bios: approved as in the mockup.
+2. Road map "Next" wording ("Testing what ZEYA changes", "First partners, real users"): approved.
+3. "Call HAK 1195" in the Kintaraa screenshot: keep as is.
+4. Web3Forms access key: Stella is getting it. Until then the form shows its "not configured" state.
+5. Larger founder portraits and a 4K hero photo: coming. Ship with the current files and swap them in later.
+6. Open Chat Studio contributions: confirmed merged. The claim stands.
