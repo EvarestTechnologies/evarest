@@ -23,7 +23,7 @@ window.matchMedia = (query: string) =>
   ({
     matches: query.includes("pointer: fine")
       ? finePointer
-      : query.includes("prefers-reduced-motion: reduce")
+      : query.includes("prefers-reduced-motion")
         ? reducedMotion
         : false,
     media: query,
