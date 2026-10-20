@@ -4,7 +4,7 @@ interface ButtonProps {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'ghost' | 'purple' | 'coral' | 'outline-purple' | 'outline';
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event?: React.MouseEvent<HTMLElement>) => void;
   href?: string;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   type = 'button',
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2';
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:ring-offset-2';
 
   const variants = {
     primary: 'bg-brand-blue-500 hover:bg-brand-blue-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
     ghost: 'text-brand-blue-500 border border-brand-blue-500 hover:bg-brand-blue-50',
     purple: 'bg-brand-blue-500 hover:bg-brand-blue-600 text-white shadow-lg hover:shadow-xl hover:shadow-brand-blue-500/50 transform hover:-translate-y-0.5',
     coral: 'bg-brand-cyan-500 hover:bg-brand-cyan-600 text-white shadow-lg hover:shadow-xl hover:shadow-brand-cyan-500/50 transform hover:-translate-y-0.5',
-    'outline-purple': 'bg-transparent hover:bg-brand-blue-500/10 text-white border-2 border-brand-blue-400 hover:border-brand-blue-300 shadow-md hover:shadow-lg',
+    'outline-purple': 'bg-white hover:bg-brand-blue-50 text-brand-blue-500 border-2 border-brand-blue-500 shadow-sm hover:shadow-md',
     outline: 'bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-300 hover:border-slate-400 shadow-sm hover:shadow-md',
   };
 
@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} onClick={onClick} className={classes}>
         {children}
       </a>
     );

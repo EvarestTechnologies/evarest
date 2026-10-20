@@ -1,178 +1,65 @@
 import { useState, useEffect } from 'react';
-import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Button from '../ui/Button';
+import Logo from '../ui/Logo';
 import { NAV_LINKS } from '../../utils/constants';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  // Handle scroll for background change
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
   }, [isMobileMenuOpen]);
-
-  const toggleDropdown = (menu: string) => {
-    setOpenDropdown(openDropdown === menu ? null : menu);
-  };
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-lg'
-            : 'bg-transparent'
+          isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
         }`}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="#" className="flex items-center space-x-2">
-              <div className="text-2xl font-bold">
-                <span className="text-blue-500">E</span>
-                <span className={isScrolled ? 'text-slate-800' : 'text-white'}>varest</span>
-              </div>
+            <a href="#" aria-label="Evarest home">
+              <Logo />
             </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              {/* Services Dropdown */}
-              <div className="relative group">
-                <button
-                  className={`flex items-center space-x-1 hover:text-blue-500 transition-colors duration-200 font-medium ${
-                    isScrolled ? 'text-slate-700' : 'text-white'
-                  }`}
-                  onMouseEnter={() => setOpenDropdown('services')}
+            <nav className="hidden lg:flex items-center space-x-8" aria-label="Main">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-medium text-slate-700 hover:text-brand-blue-500 transition-colors duration-200"
                 >
-                  <span>Services</span>
-                  <ChevronDownIcon className="w-4 h-4" />
-                </button>
-                <div
-                  className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border transition-all duration-200 ${
-                    openDropdown === 'services'
-                      ? 'opacity-100 visible'
-                      : 'opacity-0 invisible'
-                  }`}
-                  onMouseEnter={() => setOpenDropdown('services')}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="py-2">
-                    {NAV_LINKS.services.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        className="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Industries Dropdown */}
-              <div className="relative group">
-                <button
-                  className={`flex items-center space-x-1 hover:text-blue-500 transition-colors duration-200 font-medium ${
-                    isScrolled ? 'text-slate-700' : 'text-white'
-                  }`}
-                  onMouseEnter={() => setOpenDropdown('industries')}
-                >
-                  <span>Industries</span>
-                  <ChevronDownIcon className="w-4 h-4" />
-                </button>
-                <div
-                  className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border transition-all duration-200 ${
-                    openDropdown === 'industries'
-                      ? 'opacity-100 visible'
-                      : 'opacity-0 invisible'
-                  }`}
-                  onMouseEnter={() => setOpenDropdown('industries')}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="py-2">
-                    {NAV_LINKS.industries.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        className="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Regular Links */}
-              <a
-                href="#case-studies"
-                className={`hover:text-blue-500 transition-colors duration-200 font-medium ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
-                }`}
-              >
-                Case Studies
-              </a>
-              <a
-                href="#about"
-                className={`hover:text-blue-500 transition-colors duration-200 font-medium ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
-                }`}
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className={`hover:text-blue-500 transition-colors duration-200 font-medium ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
-                }`}
-              >
-                Contact
-              </a>
+                  {link.name}
+                </a>
+              ))}
             </nav>
 
-            {/* CTA Button (Desktop) */}
             <div className="hidden lg:block">
-              <Button variant="primary" size="md" href="#consultation">
-                Schedule Consultation
+              <Button variant="primary" size="md" href="#contact">
+                Contact us
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
-              className={`lg:hidden p-2 hover:text-blue-500 transition-colors duration-200 ${
-                isScrolled ? 'text-slate-700' : 'text-white'
-              }`}
+              className="lg:hidden p-2 text-slate-700 hover:text-brand-blue-500 transition-colors duration-200"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <XMarkIcon className="w-6 h-6" />
-              ) : (
-                <Bars3Icon className="w-6 h-6" />
-              )}
+              {isMobileMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300 ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -180,132 +67,37 @@ const Header = () => {
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Mobile Menu Drawer */}
       <div
         className={`fixed top-0 right-0 bottom-0 w-80 bg-white z-50 lg:hidden transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex flex-col h-full">
-          {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b">
-            <div className="text-2xl font-bold">
-              <span className="text-blue-500">E</span>
-              <span className="text-slate-800">varest</span>
-            </div>
+            <Logo />
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-slate-700 hover:text-blue-500 transition-colors"
+              className="p-2 text-slate-700 hover:text-brand-blue-500 transition-colors"
               aria-label="Close menu"
             >
               <XMarkIcon className="w-6 h-6" />
             </button>
           </div>
-
-          {/* Mobile Menu Content */}
-          <nav className="flex-1 overflow-y-auto py-6 px-6">
-            <div className="space-y-6">
-              {/* Services */}
-              <div>
-                <button
-                  onClick={() => toggleDropdown('mobile-services')}
-                  className="flex items-center justify-between w-full text-slate-800 font-semibold mb-3"
-                >
-                  <span>Services</span>
-                  <ChevronDownIcon
-                    className={`w-5 h-5 transition-transform ${
-                      openDropdown === 'mobile-services' ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`space-y-2 pl-4 overflow-hidden transition-all duration-300 ${
-                    openDropdown === 'mobile-services'
-                      ? 'max-h-96 opacity-100'
-                      : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  {NAV_LINKS.services.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="block py-2 text-slate-600 hover:text-blue-500 transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Industries */}
-              <div>
-                <button
-                  onClick={() => toggleDropdown('mobile-industries')}
-                  className="flex items-center justify-between w-full text-slate-800 font-semibold mb-3"
-                >
-                  <span>Industries</span>
-                  <ChevronDownIcon
-                    className={`w-5 h-5 transition-transform ${
-                      openDropdown === 'mobile-industries' ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`space-y-2 pl-4 overflow-hidden transition-all duration-300 ${
-                    openDropdown === 'mobile-industries'
-                      ? 'max-h-96 opacity-100'
-                      : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  {NAV_LINKS.industries.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="block py-2 text-slate-600 hover:text-blue-500 transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Direct Links */}
+          <nav className="flex-1 overflow-y-auto py-6 px-6 space-y-5" aria-label="Mobile">
+            {NAV_LINKS.map((link) => (
               <a
-                href="#case-studies"
-                className="block text-slate-800 font-semibold hover:text-blue-500 transition-colors"
+                key={link.href}
+                href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-lg font-semibold text-slate-800 hover:text-brand-blue-500"
               >
-                Case Studies
+                {link.name}
               </a>
-              <a
-                href="#about"
-                className="block text-slate-800 font-semibold hover:text-blue-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="block text-slate-800 font-semibold hover:text-blue-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
-            </div>
+            ))}
           </nav>
-
-          {/* Mobile Menu Footer CTA */}
           <div className="p-6 border-t">
-            <Button
-              variant="primary"
-              size="lg"
-              href="#consultation"
-              className="w-full"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Schedule Consultation
+            <Button variant="primary" size="lg" href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              Contact us
             </Button>
           </div>
         </div>
