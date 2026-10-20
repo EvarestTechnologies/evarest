@@ -1,13 +1,16 @@
+import { preload } from "react-dom";
 import { HOME, LINKS, SITE } from "@/content";
 import { asset } from "@/lib/asset";
 import { Button } from "@/components/ui/Button";
 import { Parallax } from "@/components/motion/Parallax";
 
-const WIDTHS = [1280, 1920, 2560];
+const WIDTHS = [640, 828, 1280, 1920, 2560];
 
 export function Hero() {
   const h = HOME.hero;
   const srcSet = WIDTHS.map((w) => `${asset(`${h.image.src}-${w}.webp`)} ${w}w`).join(", ");
+  // The hero photo is the largest paint: ask for it in the document head, before the CSS and scripts.
+  preload(asset(`${h.image.src}-1920.webp`), { as: "image", imageSrcSet: srcSet, imageSizes: "100vw", fetchPriority: "high" });
   return (
     <section className="on-dark relative flex min-h-screen items-end overflow-hidden pt-[130px] pb-[90px] text-white">
       <Parallax speed={0.25} className="absolute inset-0">
