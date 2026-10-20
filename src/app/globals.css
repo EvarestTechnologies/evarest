@@ -37,6 +37,13 @@
   --color-line: #ece6f0;
   --color-mist: #faf8fc;
   --color-tint: #f5eef9;
+  /* WhatsApp dark-mode colours, only inside the ZEYA phone screens */
+  --color-wa-bg: #0b141a;
+  --color-wa-bar: #202c33;
+  --color-wa-out: #005c4b;
+  --color-wa-meta: #8696a0;
+  --color-wa-green: #25d366;
+  --color-wa-text: #e9edef;
   --font-sans: "Inter Tight", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-wordmark: "Montserrat", system-ui, sans-serif;
