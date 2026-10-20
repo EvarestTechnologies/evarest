@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Devices that can hover with a precise pointer. Hover-only effects are scoped to this. */
+@custom-variant fine (@media (hover: hover) and (pointer: fine));
+
+
+@theme {
+  --color-purple: #a015dc;
+  --color-purple-deep: #861daf;
+  --color-purple-night: #2a0a3a;
+  --color-mint: #50e3c2;
+  --color-mint-deep: #0e745d;
+  --color-ink: #120a1a;
+  --color-ink-soft: #4a4152;
+  --color-muted: #6e6577;
+  --color-line: #ece6f0;
+  --color-mist: #faf8fc;
+  --color-tint: #f5eef9;
+  /* WhatsApp dark-mode colours, only inside the ZEYA phone screens */
+  --color-wa-bg: #0b141a;
+  --color-wa-bar: #202c33;
+  --color-wa-out: #005c4b;
+  --color-wa-meta: #8696a0;
+  --color-wa-green: #25d366;
+  --color-wa-text: #e9edef;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-wordmark: var(--font-montserrat), system-ui, sans-serif;
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible {
+  outline: 2px solid var(--color-purple-deep);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Purple is too dark to see on ink and over photos. */
+.on-dark :focus-visible {
+  outline-color: var(--color-mint);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Intro overlay (components/motion/Intro.tsx) */
+.intro-draw path {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: intro-draw 0.7s var(--ease-out-soft) forwards;
+}
+.intro-draw g line {
+  opacity: 0;
+  animation: intro-pop 0.3s ease forwards 0.6s;
+}
+.intro-rise {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: intro-rise 0.5s var(--ease-out-soft) forwards;
+}
+@keyframes intro-draw { to { stroke-dashoffset: 0; } }
+@keyframes intro-pop { to { opacity: 1; } }
+@keyframes intro-rise { to { opacity: 1; transform: none; } }

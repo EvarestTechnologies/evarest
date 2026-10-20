@@ -1,109 +1,58 @@
-import { useState, useEffect } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Button from '../ui/Button';
-import Logo from '../ui/Logo';
-import { NAV_LINKS } from '../../utils/constants';
+"use client";
 
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { LINKS, NAV, SITE } from "@/content";
+import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
+import { MobileMenu } from "./MobileMenu";
+
+/** Site header. Over the home hero photo (or with overPhoto) text is white until the page scrolls 30px. */
+export function Header({ overPhoto = false }: { overPhoto?: boolean }) {
+  const [solid, setSolid] = useState(false);
+  const [open, setOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const path = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setSolid(window.scrollY > 30);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
-  }, [isMobileMenuOpen]);
+  const close = useCallback(() => {
+    setOpen(false);
+    menuButton.current?.focus();
+  }, []);
 
+  const light = (overPhoto || path === "/") && !solid;
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
-        }`}
-      >
-        <div className="container-custom">
-          <div className="flex items-center justify-between h-20">
-            <a href="#" aria-label="Evarest home">
-              <Logo />
-            </a>
-
-            <nav className="hidden lg:flex items-center space-x-8" aria-label="Main">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-medium text-slate-700 hover:text-brand-blue-500 transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-
-            <div className="hidden lg:block">
-              <Button variant="primary" size="md" href="#contact">
-                Contact us
-              </Button>
-            </div>
-
-            <button
-              className="lg:hidden p-2 text-slate-700 hover:text-brand-blue-500 transition-colors duration-200"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <div
-        className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300 ${
-          isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setIsMobileMenuOpen(false)}
-      />
-
-      <div
-        className={`fixed top-0 right-0 bottom-0 w-80 bg-white z-50 lg:hidden transform transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-6 border-b">
-            <Logo />
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-slate-700 hover:text-brand-blue-500 transition-colors"
-              aria-label="Close menu"
-            >
-              <XMarkIcon className="w-6 h-6" />
-            </button>
-          </div>
-          <nav className="flex-1 overflow-y-auto py-6 px-6 space-y-5" aria-label="Mobile">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-lg font-semibold text-slate-800 hover:text-brand-blue-500"
-              >
-                {link.name}
-              </a>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 ${solid ? "bg-white/90 shadow-[0_1px_0_var(--color-line)] backdrop-blur-md" : ""}`}>
+        <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-7">
+          <Logo onDark={light} />
+          <nav aria-label="Main" className="hidden gap-[30px] font-medium min-[901px]:flex">
+            {NAV.map((n) => (
+              <Link key={n.href} href={n.href} aria-current={path === n.href ? "page" : undefined}
+                className={`transition-colors hover:text-purple-deep ${path === n.href ? "text-purple-deep" : light ? "text-white" : "text-ink-soft"}`}>
+                {n.label}
+              </Link>
             ))}
           </nav>
-          <div className="p-6 border-t">
-            <Button variant="primary" size="lg" href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-              Contact us
-            </Button>
+          <div className="hidden min-[901px]:block">
+            <Button href={LINKS.startProject} magnetic arrow>{SITE.startLabel}</Button>
           </div>
+          <button ref={menuButton} type="button" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}
+            className="inline-flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-[10px] border border-line bg-white min-[901px]:hidden">
+            <span className="block h-0.5 w-[18px] bg-ink" />
+            <span className="block h-0.5 w-[18px] bg-ink" />
+            <span className="block h-0.5 w-[18px] bg-ink" />
+          </button>
         </div>
-      </div>
+      </header>
+      {open && <MobileMenu onClose={close} />}
     </>
   );
-};
-
-export default Header;
+}

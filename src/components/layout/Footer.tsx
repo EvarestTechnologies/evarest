@@ -1,48 +1,53 @@
-import Logo from '../ui/Logo';
-import { CONTACT, NAV_LINKS } from '../../utils/constants';
+import Link from "next/link";
+import { CONTACT, LINKS, SITE } from "@/content";
+import { Logo } from "@/components/ui/Logo";
 
-const Footer = () => (
-  <footer className="py-14 bg-brand-navy text-slate-300">
-    <div className="container-custom">
-      <div className="grid gap-10 md:grid-cols-3">
-        <div className="space-y-4">
-          <Logo onDark />
-          <p className="max-w-xs text-sm text-slate-400">
-            Evarest Technologies Ltd. We build our own products and engineer software for other organisations.
-          </p>
+const COMPANY = [
+  { label: "Engineering", href: "/engineering/" },
+  { label: "Work", href: "/work/" },
+  { label: "About", href: "/about/" },
+  { label: "Contact", href: "/contact/" },
+];
+
+function Col({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h2 className="mb-3.5 font-mono text-xs font-medium tracking-[0.1em] text-white uppercase">{title}</h2>
+      <ul className="grid gap-2">{children}</ul>
+    </div>
+  );
+}
+
+export function Footer() {
+  const a = "transition-colors hover:text-white";
+  return (
+    <footer className="on-dark border-t border-white/10 bg-ink pt-[70px] pb-10 text-[15px] text-[color-mix(in_srgb,white_70%,var(--color-ink))]">
+      <div className="mx-auto max-w-[1240px] px-7">
+        <div className="grid grid-cols-2 gap-9 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div className="col-span-2 md:col-span-1">
+            <Logo onDark />
+            <p className="mt-3.5 max-w-[300px]">{SITE.tagline}</p>
+          </div>
+          <Col title={SITE.footer.company}>
+            {COMPANY.map((c) => <li key={c.href}><Link className={a} href={c.href}>{c.label}</Link></li>)}
+          </Col>
+          <Col title={SITE.footer.products}>
+            <li><Link className={a} href="/products/#zeya">ZEYA</Link></li>
+            <li><a className={a} href={LINKS.kintaraa}>Kintaraa</a></li>
+            <li><Link className={a} href={LINKS.zeyaPrivacy}>{SITE.footer.privacy}</Link></li>
+          </Col>
+          <Col title={SITE.footer.contact}>
+            <li><a className={a} href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+            <li><a className={a} href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
+            <li><a className={a} href={LINKS.linkedin}>LinkedIn</a></li>
+            <li><a className={a} href={LINKS.x}>X</a></li>
+          </Col>
         </div>
-
-        <nav aria-label="Footer">
-          <h3 className="mb-4 text-sm font-semibold tracking-wider text-white uppercase">Site</h3>
-          <ul className="space-y-2 text-sm">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="hover:text-brand-cyan-400">{link.name}</a>
-              </li>
-            ))}
-            <li><a href="/zeya/" className="hover:text-brand-cyan-400">ZEYA</a></li>
-          </ul>
-        </nav>
-
-        <div>
-          <h3 className="mb-4 text-sm font-semibold tracking-wider text-white uppercase">Contact</h3>
-          <ul className="space-y-2 text-sm">
-            <li>{CONTACT.location}</li>
-            <li><a href={`mailto:${CONTACT.email}`} className="hover:text-brand-cyan-400">{CONTACT.email}</a></li>
-            <li><a href={CONTACT.phoneHref} className="hover:text-brand-cyan-400">{CONTACT.phone}</a></li>
-            <li className="flex gap-4 pt-2">
-              <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan-400">LinkedIn</a>
-              <a href={CONTACT.x} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan-400">X</a>
-            </li>
-          </ul>
+        <div className="mt-[50px] flex flex-wrap justify-between gap-3 border-t border-white/10 pt-6 text-[13.5px]">
+          <span>© {new Date().getFullYear()} {SITE.name}</span>
+          <span>{CONTACT.location}</span>
         </div>
       </div>
-
-      <p className="pt-8 mt-10 text-sm border-t border-white/10 text-slate-500">
-        © {new Date().getFullYear()} Evarest Technologies Ltd
-      </p>
-    </div>
-  </footer>
-);
-
-export default Footer;
+    </footer>
+  );
+}
