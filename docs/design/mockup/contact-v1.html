@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Evarest mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/files/site.css"></head>
+<body>
+
+<header id="hdr">
+  <div class="wrap">
+    <a class="logo" href="/files/home-v3.html"><svg viewBox="105 120 290 175" width="34" aria-hidden="true"><path d="M 120 280 L 380 280 M 120 280 L 185 200 L 220 245 M 185 200 L 175 280 M 120 280 L 195 255 L 175 280 M 205 225 L 250 145 L 325 280 M 250 145 L 225 185 L 250 190 L 210 260 M 225 280 L 250 240 L 275 280 M 270 250 L 315 195 L 380 280 M 315 195 L 340 280" stroke="#A015DC" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><g transform="rotate(-45, 250, 200)" stroke="#50E3C2" stroke-width="12" stroke-linecap="round"><line x1="242" y1="205" x2="275" y2="205"/><line x1="250" y1="193" x2="285" y2="193"/></g></svg><span>EVAR<span class="m2">EST</span></span></a>
+    <nav class="main" aria-label="Main"><a href="/files/products-v1.html">Products</a><a href="/files/engineering-v1.html">Engineering</a><a href="/files/work-v1.html">Work</a><a href="/files/about-v2.html">About</a><a href="/files/contact-v1.html" class="cur">Contact</a></nav>
+    <a class="btn btn-primary magnetic" href="/files/contact-v1.html?t=project">Start a project <span class="arrow">→</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+<div class="drawer" id="drawer" role="dialog" aria-label="Menu"><button class="close" aria-label="Close menu">×</button><a href="/files/products-v1.html">Products</a><a href="/files/engineering-v1.html">Engineering</a><a href="/files/work-v1.html">Work</a><a href="/files/about-v2.html">About</a><a href="/files/contact-v1.html">Contact</a><a class="btn btn-primary" href="/files/contact-v1.html?t=project" style="align-self:flex-start;font-size:17px">Start a project →</a></div>
+<main>
+  <section class="ct">
+    <div class="aurora"></div>
+    <div class="wrap ct-grid">
+      <div>
+        <span class="label">Contact</span>
+        <h1>Tell us what <span>you are building.</span></h1>
+        <p class="hero-sub">A project, a partnership, or a question. Send us a few lines and the right person will reply by email.</p>
+        <div class="next-steps">
+          <div><i>✉</i><div><b>You send a message</b>What you need, and roughly when.</div></div>
+          <div><i>↩</i><div><b>We reply by email</b>With questions, or a time for a first call.</div></div>
+          <div><i>✓</i><div><b>We send a proposal</b>Scope, timeline and price, once we understand the work.</div></div>
+        </div>
+        <div class="direct">
+          <span>Or reach us directly</span>
+          <a href="mailto:contact@evarestke.com">contact@evarestke.com</a>
+          <a href="tel:+254723469406">+254 723 469 406</a>
+          <a href="https://www.linkedin.com/company/evarest-technologies/">LinkedIn</a>
+        </div>
+      </div>
+      <div class="form fade in" id="formBox">
+        <form id="enquiry" novalidate>
+          <fieldset>
+            <legend>What is it about?</legend>
+            <div class="chips">
+              <input type="radio" name="topic" id="t-project" value="Engineering project" checked><label for="t-project">An engineering project</label>
+              <input type="radio" name="topic" id="t-partner" value="Product partnership"><label for="t-partner">A product partnership</label>
+              <input type="radio" name="topic" id="t-other" value="Something else"><label for="t-other">Something else</label>
+            </div>
+          </fieldset>
+          <div class="row2">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="f-org">Company or organisation <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="f-org" name="organisation" autocomplete="organization"></div>
+          <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required placeholder="What are you building, and when do you need it?"></textarea></div>
+          <div class="field"><label for="f-when">When would you like to start? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <select id="f-when" name="start"><option value="">Choose one</option><option>As soon as possible</option><option>In the next 1 to 3 months</option><option>Later, just exploring</option></select></div>
+          <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-primary send" type="submit">Send message <span class="arrow">→</span></button>
+          <p class="small">We use your details only to reply to you.</p>
+        </form>
+        <div class="ok" role="status" tabindex="-1" id="okMsg"><b>Thank you. Your message is on its way.</b>We will reply by email.</div>
+      </div>
+    </div>
+  </section>
+  <script>
+    try { const t = new URLSearchParams(location.search).get('t'); if (t === 'partner') document.getElementById('t-partner').checked = true; } catch (e) {}
+    document.getElementById('enquiry').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target;
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      // Mockup: the real site posts to Web3Forms here.
+      document.getElementById('formBox').classList.add('sent');
+      document.getElementById('okMsg').focus();
+    });
+  </script>
+</main>
+<footer class="big">
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="/files/home-v3.html"><svg viewBox="105 120 290 175" width="34" aria-hidden="true"><path d="M 120 280 L 380 280 M 120 280 L 185 200 L 220 245 M 185 200 L 175 280 M 120 280 L 195 255 L 175 280 M 205 225 L 250 145 L 325 280 M 250 145 L 225 185 L 250 190 L 210 260 M 225 280 L 250 240 L 275 280 M 270 250 L 315 195 L 380 280 M 315 195 L 340 280" stroke="#A015DC" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><g transform="rotate(-45, 250, 200)" stroke="#50E3C2" stroke-width="12" stroke-linecap="round"><line x1="242" y1="205" x2="275" y2="205"/><line x1="250" y1="193" x2="285" y2="193"/></g></svg><span>EVAR<span class="m2">EST</span></span></a><p style="margin:0;max-width:300px">We build our own products and engineer software for teams that need it built, shipped and supported.</p></div>
+      <div><h5>Company</h5><ul><li><a href="/files/engineering-v1.html">Engineering</a></li><li><a href="/files/work-v1.html">Work</a></li><li><a href="/files/about-v2.html">About</a></li><li><a href="/files/contact-v1.html">Contact</a></li></ul></div>
+      <div><h5>Products</h5><ul><li><a href="/files/products-v1.html#zeya">ZEYA</a></li><li><a href="https://kintaraa.com/">Kintaraa</a></li><li><a href="https://evarestke.com/zeya/">ZEYA privacy policy</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:contact@evarestke.com">contact@evarestke.com</a></li><li><a href="tel:+254723469406">+254 723 469 406</a></li><li><a href="https://www.linkedin.com/company/evarest-technologies/">LinkedIn</a></li><li><a href="https://x.com/Evarestke">X</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Evarest Technologies Ltd</span><span>Nairobi, Kenya</span></div>
+  </div>
+</footer>
+<div class="note"><b>Mockup</b>Contact page. In the mockup the form only shows the thank-you; the real site sends it by email through Web3Forms.</div>
+<script src="/files/site.js"></script>
+</body></html>

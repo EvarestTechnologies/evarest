@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Evarest mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/files/site.css"></head>
+<body>
+
+<header id="hdr">
+  <div class="wrap">
+    <a class="logo" href="/files/home-v3.html"><svg viewBox="105 120 290 175" width="34" aria-hidden="true"><path d="M 120 280 L 380 280 M 120 280 L 185 200 L 220 245 M 185 200 L 175 280 M 120 280 L 195 255 L 175 280 M 205 225 L 250 145 L 325 280 M 250 145 L 225 185 L 250 190 L 210 260 M 225 280 L 250 240 L 275 280 M 270 250 L 315 195 L 380 280 M 315 195 L 340 280" stroke="#A015DC" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><g transform="rotate(-45, 250, 200)" stroke="#50E3C2" stroke-width="12" stroke-linecap="round"><line x1="242" y1="205" x2="275" y2="205"/><line x1="250" y1="193" x2="285" y2="193"/></g></svg><span>EVAR<span class="m2">EST</span></span></a>
+    <nav class="main" aria-label="Main"><a href="/files/products-v1.html">Products</a><a href="/files/engineering-v1.html">Engineering</a><a href="/files/work-v1.html">Work</a><a href="/files/about-v2.html" class="cur">About</a><a href="/files/contact-v1.html">Contact</a></nav>
+    <a class="btn btn-primary magnetic" href="/files/contact-v1.html?t=project">Start a project <span class="arrow">→</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+<div class="drawer" id="drawer" role="dialog" aria-label="Menu"><button class="close" aria-label="Close menu">×</button><a href="/files/products-v1.html">Products</a><a href="/files/engineering-v1.html">Engineering</a><a href="/files/work-v1.html">Work</a><a href="/files/about-v2.html">About</a><a href="/files/contact-v1.html">Contact</a><a class="btn btn-primary" href="/files/contact-v1.html?t=project" style="align-self:flex-start;font-size:17px">Start a project →</a></div>
+<main>
+  <section class="ab-hero">
+    <div class="aurora"></div>
+    <div class="wrap" style="position:relative">
+      <span class="label">Our story</span>
+      <h1 class="fade in" style="font-size:clamp(38px,4.8vw,72px);line-height:1.02">Most teams meet when the project starts. <span>We&rsquo;d already been building together for two years.</span></h1>
+      <div class="ab-cols fade">
+        <p class="lead">We trained as software engineers side by side and entered hackathons as a team, where the software has to work by the deadline. Some of those projects won. One of them, Kintaraa, mattered too much to leave as a demo, so we kept building it.</p>
+        <p>When you work with Evarest, you get a team that already knows how to ship together. And because we run products of our own, we know launch day is where the work starts, not where it ends.</p>
+      </div>
+      <div class="roadmap fade">
+        <div class="rm-head"><h3>Our road so far</h3><div class="rm-key"><span><i style="background:var(--purple-deep)"></i>Done</span><span><i style="background:var(--mint)"></i>Now</span><span><i style="border:2px dashed #C9B6D6"></i>Next</span></div></div>
+        <div class="road" id="road">
+          <svg viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
+            <path class="base" d="M 20 190 C 140 60, 260 60, 380 190 S 620 320, 740 190 S 980 60, 1100 190 S 1340 320, 1420 230"/>
+            <path class="done" d="M 20 190 C 140 60, 260 60, 380 190 S 620 320, 740 190 S 980 60, 1100 190 S 1340 320, 1420 230"/>
+            <path class="lane" d="M 20 190 C 140 60, 260 60, 380 190 S 620 320, 740 190 S 980 60, 1100 190 S 1340 320, 1420 230"/>
+          </svg>
+          <div class="stop"><span class="pin"></span><div class="card"><b>Trained together</b>Two years as software engineering trainees</div></div>
+          <div class="stop"><span class="pin"></span><div class="card"><b>Built at hackathons</b>Working software, to a deadline</div></div>
+          <div class="stop"><span class="pin"></span><div class="card"><b>Kintaraa began</b>A hackathon project we kept building</div></div>
+          <div class="stop"><span class="pin"></span><div class="card"><b>Founded Evarest</b>Our own products and client engineering</div></div>
+          <div class="stop now"><span class="pin"></span><div class="card"><em>Now</em><b>ZEYA on WhatsApp</b>Open to women across Kenya</div></div>
+          <div class="stop next"><span class="pin"></span><div class="card"><em>Next</em><b>ZEYA research trial</b>Testing what ZEYA changes</div></div>
+          <div class="stop next"><span class="pin"></span><div class="card"><em>Next</em><b>Kintaraa pilot</b>First partners, real users</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ab-photo">
+    <img class="par" data-speed=".18" src="/files/about-kili.jpg" alt="Kilimanjaro above the clouds, seen from Amboseli in Kenya">
+    <span class="cap">The climb starts here</span>
+  </section>
+
+  <section class="vm">
+    <div class="wrap">
+      <div class="vm-row fade"><span class="k">Vision</span><p>A world where technology makes essential services more accessible, reliable and effective.</p></div>
+      <div class="vm-row mission fade"><span class="k">Mission</span><p>We build technology products that address real-world challenges, and engineer software systems that help organisations deliver better services.</p></div>
+    </div>
+  </section>
+
+  <section class="team-sec">
+    <div class="wrap">
+      <div class="top fade"><div><span class="label">The team</span><h2>The people behind Evarest.</h2></div><p>Four engineers, one of us also a clinician. That is why safety comes first in everything we build.</p></div>
+      <div class="team">
+        <div class="member fade"><div class="img reveal"><img src="/files/stella-320.webp" alt="Stella Achar Oiro"></div><div class="meta2"><div><b>Stella Achar Oiro</b><span class="role">Co-founder and CEO</span></div><a class="li" href="https://www.linkedin.com/in/stella-achar-oiro/" target="_blank" rel="noopener noreferrer" aria-label="Stella Achar Oiro on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.36h-4v-4.75c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.84h-4v-11z"/></svg></a></div><span class="bio">Leads company direction and our health products.</span></div>
+        <div class="member fade"><div class="img reveal"><img src="/files/raymond-320.webp" alt="Raymond Caleb"></div><div class="meta2"><div><b>Raymond Caleb</b><span class="role">Co-founder and CTO</span></div><a class="li" href="https://www.linkedin.com/in/raymond-caleb/" target="_blank" rel="noopener noreferrer" aria-label="Raymond Caleb on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.36h-4v-4.75c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.84h-4v-11z"/></svg></a></div><span class="bio">Leads technical direction, architecture and engineering standards.</span></div>
+        <div class="member fade"><div class="img reveal"><img src="/files/vincent-320.webp" alt="Vincent Odhiambo"></div><div class="meta2"><div><b>Vincent Odhiambo</b><span class="role">Co-founder and COO</span></div><a class="li" href="https://www.linkedin.com/in/vincent-omondi/" target="_blank" rel="noopener noreferrer" aria-label="Vincent Odhiambo on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.36h-4v-4.75c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.84h-4v-11z"/></svg></a></div><span class="bio">Leads operations and delivery, from scoping to handover.</span></div>
+        <div class="member fade"><div class="img reveal"><img src="/files/seth-320.webp" alt="Seth Athooh"></div><div class="meta2"><div><b>Seth Athooh</b><span class="role">Co-founder and CFO</span></div><a class="li" href="https://www.linkedin.com/in/oathooh/" target="_blank" rel="noopener noreferrer" aria-label="Seth Athooh on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3v-11zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.36h-4v-4.75c0-1.13-.02-2.59-1.58-2.59-1.58 0-1.82 1.23-1.82 2.5v4.84h-4v-11z"/></svg></a></div><span class="bio">Leads financial planning and oversight.</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="final dark">
+    <svg class="mtn-lines" viewBox="105 120 290 175" aria-hidden="true"><path d="M 120 280 L 380 280 M 120 280 L 185 200 L 220 245 M 185 200 L 175 280 M 120 280 L 195 255 L 175 280 M 205 225 L 250 145 L 325 280 M 250 145 L 225 185 L 250 190 L 210 260 M 225 280 L 250 240 L 275 280 M 270 250 L 315 195 L 380 280 M 315 195 L 340 280" stroke="#C68EE0" stroke-width=".8" fill="none" stroke-linejoin="round"/></svg>
+    <div class="wrap">
+      <h2 class="fade">Have something that <span class="acc">needs to be built?</span></h2>
+      <p class="fade">Tell us what you are building and when you need it. We reply by email.</p>
+      <div class="ctas" style="justify-content:center">
+        <a class="btn btn-primary magnetic" href="/files/contact-v1.html?t=project">Start a project <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="/files/contact-v1.html?t=partner">Partner with us</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="big">
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="logo" href="/files/home-v3.html"><svg viewBox="105 120 290 175" width="34" aria-hidden="true"><path d="M 120 280 L 380 280 M 120 280 L 185 200 L 220 245 M 185 200 L 175 280 M 120 280 L 195 255 L 175 280 M 205 225 L 250 145 L 325 280 M 250 145 L 225 185 L 250 190 L 210 260 M 225 280 L 250 240 L 275 280 M 270 250 L 315 195 L 380 280 M 315 195 L 340 280" stroke="#A015DC" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><g transform="rotate(-45, 250, 200)" stroke="#50E3C2" stroke-width="12" stroke-linecap="round"><line x1="242" y1="205" x2="275" y2="205"/><line x1="250" y1="193" x2="285" y2="193"/></g></svg><span>EVAR<span class="m2">EST</span></span></a><p style="margin:0;max-width:300px">We build our own products and engineer software for teams that need it built, shipped and supported.</p></div>
+      <div><h5>Company</h5><ul><li><a href="/files/engineering-v1.html">Engineering</a></li><li><a href="/files/work-v1.html">Work</a></li><li><a href="/files/about-v2.html">About</a></li><li><a href="/files/contact-v1.html">Contact</a></li></ul></div>
+      <div><h5>Products</h5><ul><li><a href="/files/products-v1.html#zeya">ZEYA</a></li><li><a href="https://kintaraa.com/">Kintaraa</a></li><li><a href="https://evarestke.com/zeya/">ZEYA privacy policy</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="mailto:contact@evarestke.com">contact@evarestke.com</a></li><li><a href="tel:+254723469406">+254 723 469 406</a></li><li><a href="https://www.linkedin.com/company/evarest-technologies/">LinkedIn</a></li><li><a href="https://x.com/Evarestke">X</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Evarest Technologies Ltd</span><span>Nairobi, Kenya</span></div>
+  </div>
+</footer>
+<div class="note"><b>Mockup</b>Team only: name, title, LinkedIn. Photos are small; larger ones would be sharper.</div>
+<script src="/files/site.js"></script>
+</body></html>
