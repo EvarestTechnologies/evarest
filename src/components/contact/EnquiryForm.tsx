@@ -3,7 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { CONTACT, CONTACT_PAGE, START_OPTIONS, TOPICS } from "@/content";
 import { enquirySchema, type EnquiryTopic } from "@/lib/validation";
-import { sendEnquiry, type FieldErrors, type FormStatus } from "./form-state";
+import { THANKS_URL, WEB3FORMS_ENDPOINT, sendEnquiry, type FieldErrors, type FormStatus } from "./form-state";
 import { Field, inputClass } from "./Field";
 
 const F = CONTACT_PAGE.form;
@@ -27,9 +27,11 @@ export function EnquiryForm({ accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY 
       return;
     }
     setErrors({});
-    if (Date.now() - mountedAt < minDelayMs) return;
     if (!accessKey) return setStatus("unconfigured");
     setStatus("sending");
+    // Time trap: a human who is faster than minDelayMs simply waits; a bot posting at once gets the same delay.
+    const wait = minDelayMs - (Date.now() - mountedAt);
+    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
     const ok = await sendEnquiry(accessKey, parsed.data);
     setStatus(ok ? "sent" : "error");
     if (ok) requestAnimationFrame(() => thanks.current?.focus());
@@ -48,7 +50,10 @@ export function EnquiryForm({ accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY 
   const err = (k: keyof FieldErrors) => ({ "aria-invalid": errors[k] ? true : undefined, "aria-describedby": errors[k] ? `f-${k}-error` : undefined });
   const mailto = <a className="font-semibold text-purple-deep underline" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>;
   return (
-    <form onSubmit={onSubmit} noValidate className="relative">
+    // method and action keep the form working (and details out of the URL) when JavaScript is blocked.
+    <form onSubmit={onSubmit} noValidate method="post" action={WEB3FORMS_ENDPOINT} className="relative">
+      <input type="hidden" name="access_key" value={accessKey} />
+      <input type="hidden" name="redirect" value={THANKS_URL} />
       {invalid && <p role="alert" className="mb-4 rounded-lg bg-tint px-3.5 py-2.5 text-sm text-ink">{F.errorSummary}</p>}
       <fieldset className="mb-[22px]">
         <legend className="mb-2 font-semibold text-ink">{F.topicLegend}</legend>

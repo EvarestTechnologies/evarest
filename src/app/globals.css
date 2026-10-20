@@ -9,7 +9,7 @@
   --color-purple-deep: #861daf;
   --color-purple-night: #2a0a3a;
   --color-mint: #50e3c2;
-  --color-mint-deep: #13896e;
+  --color-mint-deep: #0e745d;
   --color-ink: #120a1a;
   --color-ink-soft: #4a4152;
   --color-muted: #6e6577;
@@ -45,6 +45,10 @@ body {
   outline: 2px solid var(--color-purple-deep);
   outline-offset: 3px;
   border-radius: 4px;
+}
+/* Purple is too dark to see on ink and over photos. */
+.on-dark :focus-visible {
+  outline-color: var(--color-mint);
 }
 @media (prefers-reduced-motion: reduce) {
   html {

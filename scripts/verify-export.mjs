@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-export const ROUTES = ["", "products", "engineering", "work", "about", "contact", "zeya/privacy"];
+export const ROUTES = ["", "products", "engineering", "work", "about", "contact", "contact/thanks", "zeya/privacy"];
 
 const BANNED = [
   ["github.com/EvarestTechnologies", "contains github.com/EvarestTechnologies"],

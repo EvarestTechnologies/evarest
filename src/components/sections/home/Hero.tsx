@@ -9,7 +9,7 @@ export function Hero() {
   const h = HOME.hero;
   const srcSet = WIDTHS.map((w) => `${asset(`${h.image.src}-${w}.webp`)} ${w}w`).join(", ");
   return (
-    <section className="relative flex min-h-screen items-end overflow-hidden pt-[130px] pb-[90px] text-white">
+    <section className="on-dark relative flex min-h-screen items-end overflow-hidden pt-[130px] pb-[90px] text-white">
       <Parallax speed={0.25} className="absolute inset-0">
         <img src={asset(`${h.image.src}-1920.webp`)} srcSet={srcSet} sizes="100vw" alt={h.image.alt} width={1920} height={1280}
           loading="eager" fetchPriority="high" className="h-full w-full object-cover object-[center_35%]" />

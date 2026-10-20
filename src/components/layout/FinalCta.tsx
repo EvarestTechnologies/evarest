@@ -4,7 +4,7 @@ import { MountainLines } from "@/components/ui/MountainLines";
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-ink py-[120px] text-center text-white">
+    <section className="on-dark relative overflow-hidden bg-ink py-[120px] text-center text-white">
       <MountainLines className="pointer-events-none absolute -bottom-10 left-1/2 w-[1100px] -translate-x-1/2 opacity-[0.14]" strokeWidth={0.8} />
       <div className="relative mx-auto max-w-[1240px] px-7">
         <h2 className="mx-auto mb-[18px] max-w-[900px] text-[clamp(40px,5.6vw,84px)] leading-[0.98] font-bold tracking-[-0.05em]">

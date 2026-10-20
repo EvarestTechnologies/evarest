@@ -21,7 +21,7 @@ function Col({ title, children }: { title: string; children: React.ReactNode }) 
 export function Footer() {
   const a = "transition-colors hover:text-white";
   return (
-    <footer className="border-t border-white/10 bg-ink pt-[70px] pb-10 text-[15px] text-[color-mix(in_srgb,white_70%,var(--color-ink))]">
+    <footer className="on-dark border-t border-white/10 bg-ink pt-[70px] pb-10 text-[15px] text-[color-mix(in_srgb,white_70%,var(--color-ink))]">
       <div className="mx-auto max-w-[1240px] px-7">
         <div className="grid grid-cols-2 gap-9 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="col-span-2 md:col-span-1">
