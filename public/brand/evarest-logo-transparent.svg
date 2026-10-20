@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Geometric Sans-Serif Font Fallbacks for standard rendering -->
+    <style>
+      .logo-text {
+        font-family: 'Montserrat', 'Proxima Nova', 'Segoe UI', 'Helvetica Neue', sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: 8px;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- Purple Mountain Wireframe -->
+  <path d="
+    M 120 280 L 380 280
+    M 120 280 L 185 200 L 220 245
+    M 185 200 L 175 280
+    M 120 280 L 195 255 L 175 280
+    M 205 225 L 250 145 L 325 280
+    M 250 145 L 225 185 L 250 190 L 210 260
+    M 225 280 L 250 240 L 275 280
+    M 270 250 L 315 195 L 380 280
+    M 315 195 L 340 280
+  " stroke="#A015DC" stroke-width="4.5" fill="none" stroke-linejoin="round" stroke-linecap="round" />
+
+  <!-- Cyan Digital / Shooting Star Trails -->
+  <g transform="rotate(-45, 250, 200)" stroke="#50E3C2" stroke-width="5" stroke-linecap="round">
+    <!-- Lower Track -->
+    <line x1="210" y1="205" x2="215" y2="205" />
+    <line x1="225" y1="205" x2="232" y2="205" />
+    <line x1="242" y1="205" x2="275" y2="205" />
+    <line x1="285" y1="205" x2="292" y2="205" />
+    <line x1="302" y1="205" x2="309" y2="205" />
+    
+    <!-- Upper Track -->
+    <line x1="250" y1="193" x2="285" y2="193" />
+    <line x1="295" y1="193" x2="302" y2="193" />
+    <line x1="312" y1="193" x2="319" y2="193" />
+    <line x1="329" y1="193" x2="336" y2="193" />
+  </g>
+
+  <!-- Typography -->
+  <!-- Shifted X slightly right (254) to perfectly visually center against the 8px letter-spacing -->
+  <text x="254" y="355" class="logo-text">
+    <tspan fill="#FFFFFF">EVA</tspan><tspan fill="#50E3C2">REST</tspan>
+  </text>
+</svg>

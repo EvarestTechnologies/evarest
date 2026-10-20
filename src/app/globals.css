@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Devices that can hover with a precise pointer. Hover-only effects are scoped to this. */
+@custom-variant fine (@media (hover: hover) and (pointer: fine));
+
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/inter-tight-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/fonts/jetbrains-mono-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/montserrat-latin.woff2") format("woff2");
+}
+
+@theme {
+  --color-purple: #a015dc;
+  --color-purple-deep: #861daf;
+  --color-purple-night: #2a0a3a;
+  --color-mint: #50e3c2;
+  --color-mint-deep: #13896e;
+  --color-ink: #120a1a;
+  --color-ink-soft: #4a4152;
+  --color-muted: #6e6577;
+  --color-line: #ece6f0;
+  --color-mist: #faf8fc;
+  --color-tint: #f5eef9;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-wordmark: "Montserrat", system-ui, sans-serif;
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible {
+  outline: 2px solid var(--color-purple-deep);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
