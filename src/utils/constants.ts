@@ -69,7 +69,7 @@ export const PRODUCTS = [
       'Developed in response to concerns about femicide and gender-based violence.',
       'Designed so that survivors can seek support without revealing who they are.',
     ],
-    status: 'Deployed, awaiting its Nairobi County pilot',
+    status: 'Ready for pilot',
     href: null,
     linkLabel: null,
     cta: 'Discuss an implementation partnership',
@@ -88,10 +88,7 @@ export const WORK = [
     title: 'Open Chat Studio',
     tag: 'Open source · Applied AI',
     body: 'Members of our team have contributed code to Open Chat Studio, Dimagi’s open-source chatbot platform. We self-host it and build ZEYA on it, with the safety rules written in code and tested.',
-    links: [
-      { label: 'Open Chat Studio on GitHub', href: 'https://github.com/dimagi/open-chat-studio' },
-      { label: 'ZEYA on GitHub', href: 'https://github.com/EvarestTechnologies/zeya' },
-    ],
+    links: [{ label: 'Chat with ZEYA on WhatsApp', href: 'https://wa.me/254183325153?text=Hi' }],
   },
 ];
 
