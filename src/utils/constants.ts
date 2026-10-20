@@ -1,161 +1,113 @@
-// Company Information
-export const COMPANY_INFO = {
-  name: 'Evarest',
-  tagline: 'Enterprise-Grade Engineering That Scales',
-  description: 'Premium engineering services that combine technical expertise with business understanding to accelerate product development.',
+// Every fact on the site lives here. Source: the Evarest company brief
+// (~/Evarest/company/evarest-company-brief.md). Do not add clients, metrics,
+// certifications or testimonials without founder confirmation.
+
+export const CONTACT = {
+  email: 'contact@evarestke.com',
+  phone: '+254 723 469 406',
+  phoneHref: 'tel:+254723469406',
+  whatsappHref: 'https://wa.me/254723469406',
+  location: 'Nairobi, Kenya',
+  linkedin: 'https://www.linkedin.com/company/evarest-technologies/',
+  x: 'https://x.com/Evarestke',
 };
 
-// Trust Indicators
-export const TRUST_METRICS: { value: string; label: string }[] = [];
+export const mailto = (subject: string) =>
+  `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}`;
 
-// Services
+export const NAV_LINKS = [
+  { name: 'Products', href: '#products' },
+  { name: 'Engineering', href: '#engineering' },
+  { name: 'Our work', href: '#work' },
+  { name: 'How we work', href: '#how-we-work' },
+  { name: 'About', href: '#about' },
+];
+
 export const SERVICES = [
   {
-    id: 'cloud-infrastructure',
-    name: 'Cloud & Infrastructure Services',
-    icon: 'Cloud',
-    description: 'Scalable infrastructure that grows with your business',
-    outcomes: ['Cost optimization', 'High availability', 'Global deployment'],
-    compliance: [],
-    category: 'infrastructure',
-    estimatedWeeks: 16,
-    estimatedCost: '$20K-$40K/mo',
+    name: 'Backend and API engineering',
+    description: 'Backend systems, APIs, data flows and application logic, built and improved.',
   },
   {
-    id: 'app-development',
-    name: 'Application Development & Modernization',
-    icon: 'Code',
-    description: 'Modern applications that drive business value',
-    outcomes: ['Faster time-to-market', 'Improved UX', 'Legacy migration'],
-    compliance: [],
-    category: 'development',
-    estimatedWeeks: 12,
-    estimatedCost: '$15K-$35K/mo',
+    name: 'Integrations and automation',
+    description: 'Connecting your systems, integrating third-party services and automating workflows.',
   },
   {
-    id: 'data-ai',
-    name: 'Data & AI Engineering',
-    icon: 'Brain',
-    description: 'Turn data into competitive advantage',
-    outcomes: ['Real-time analytics', 'ML models', 'Data pipeline automation'],
-    compliance: [],
-    category: 'ai',
-    estimatedWeeks: 10,
-    estimatedCost: '$18K-$38K/mo',
+    name: 'Applied AI implementation',
+    description: 'Practical AI features and workflows, including LLM integrations and retrieval where it fits.',
   },
   {
-    id: 'security-compliance',
-    name: 'Security & Compliance Engineering',
-    icon: 'Shield',
-    description: 'Enterprise security that enables business',
-    outcomes: ['Enterprise compliance', 'Zero-trust architecture', 'Security audits'],
-    compliance: [],
-    category: 'security',
-    estimatedWeeks: 8,
-    estimatedCost: '$15K-$30K/mo',
+    name: 'End-to-end product development',
+    description: 'From technical discovery through implementation, testing, deployment and handover.',
   },
   {
-    id: 'devops-sre',
-    name: 'DevOps & Site Reliability Engineering',
-    icon: 'GitBranch',
-    description: 'Reliability at scale',
-    outcomes: ['Automated deployments', '24/7 monitoring', 'Incident response'],
-    compliance: [],
-    category: 'infrastructure',
-    estimatedWeeks: 10,
-    estimatedCost: '$16K-$32K/mo',
-  },
-  {
-    id: 'managed-services',
-    name: 'Managed Services & 24/7 Support',
-    icon: 'Headphones',
-    description: 'Always-on operations',
-    outcomes: ['SLA-backed support', 'Proactive monitoring', 'Cost predictability'],
-    compliance: [],
-    category: 'support',
-    estimatedWeeks: 4,
-    estimatedCost: '$12K-$25K/mo',
+    name: 'Ongoing engineering support',
+    description: 'Maintenance, bug fixes, deployment support and new features under an agreed arrangement.',
   },
 ];
 
-// Industries
-export const INDUSTRIES = [
+export const PRODUCTS = [
   {
-    id: 'healthtech',
-    name: 'HealthTech',
-    icon: 'Heart',
-    gradient: 'from-brand-cyan-500 to-brand-blue-600',
-    compliance: [],
-    stats: ['Secure healthcare solutions', 'HIPAA-ready infrastructure'],
+    name: 'ZEYA',
+    summary: 'A pregnancy education companion on WhatsApp for women in Kenya, in English and Kiswahili.',
+    details: [
+      'Answers draw on World Health Organization and Kenya Ministry of Health guidance.',
+      'When a message describes a danger sign, ZEYA sends emergency numbers before any AI runs.',
+      'Education, not diagnosis. It does not replace a health worker.',
+    ],
+    status: 'Open on WhatsApp',
+    href: 'https://wa.me/254183325153?text=Hi',
+    linkLabel: 'Chat with ZEYA',
+    cta: 'Discuss a research or implementation partnership',
+    subject: 'ZEYA partnership',
   },
   {
-    id: 'fintech',
-    name: 'FinTech',
-    icon: 'DollarSign',
-    gradient: 'from-brand-blue-500 to-brand-cyan-500',
-    compliance: [],
-    stats: ['Secure payment processing', 'Financial-grade security'],
-  },
-  {
-    id: 'government',
-    name: 'Government/Public Sector',
-    icon: 'Building',
-    gradient: 'from-brand-blue-600 to-brand-blue-700',
-    compliance: [],
-    stats: ['Government-grade security', 'Trusted public sector partner'],
-  },
-  {
-    id: 'saas',
-    name: 'Enterprise SaaS',
-    icon: 'Grid',
-    gradient: 'from-brand-blue-400 to-brand-cyan-400',
-    compliance: [],
-    stats: ['Scalable SaaS platforms', 'Enterprise-ready solutions'],
+    name: 'Kintaraa',
+    summary: 'An anonymity-first platform for survivors of gender-based violence.',
+    details: [
+      'Developed in response to concerns about femicide and gender-based violence.',
+      'Designed so that survivors can seek support without revealing who they are.',
+    ],
+    status: 'Ready for pilot',
+    href: 'https://kintaraa.com/',
+    linkLabel: 'Visit kintaraa.com',
+    cta: 'Discuss an implementation partnership',
+    subject: 'Kintaraa partnership',
   },
 ];
 
-// Engagement Models
-export const ENGAGEMENT_MODELS = [
+export const WORK = [
   {
-    id: 'dedicated-teams',
-    name: 'Dedicated Teams',
-    icon: 'Users',
-    description: 'Full ownership of your product roadmap',
-    bestFor: 'Long-term partnerships and product development',
-    benefits: ['Aligned incentives', 'Deep product knowledge', 'Dedicated capacity'],
+    title: 'KOA Africa Insurance Agency',
+    tag: 'Client work · Insurance',
+    body: 'We built KOA Africa’s insurance platform from scratch: the public website, the agent portal and the backend behind them. KOA is now running a live pilot, and we support the platform on a retainer covering maintenance, fixes, new features and deployment.',
+    links: [{ label: 'koaafricaa.com', href: 'https://koaafricaa.com/' }],
   },
   {
-    id: 'staff-augmentation',
-    name: 'Staff Augmentation',
-    icon: 'UserPlus',
-    description: 'Flexible scaling with specialized expertise',
-    bestFor: 'Short-term needs and specialized skills',
-    benefits: ['Rapid onboarding', 'Flexible contracts', 'Domain expertise'],
-  },
-  {
-    id: 'managed-services',
-    name: 'Managed Services',
-    icon: 'Settings',
-    description: '24/7 operations and SLA-backed support',
-    bestFor: 'Production systems and critical infrastructure',
-    benefits: ['Proactive monitoring', 'Guaranteed uptime', 'Predictable costs'],
+    title: 'Open Chat Studio',
+    tag: 'Open source · Applied AI',
+    body: 'Members of our team have contributed code to Open Chat Studio, Dimagi’s open-source chatbot platform. We self-host it and build ZEYA on it, with the safety rules written in code and tested.',
+    links: [{ label: 'Chat with ZEYA on WhatsApp', href: 'https://wa.me/254183325153?text=Hi' }],
   },
 ];
 
-// Navigation
-export const NAV_LINKS = {
-  services: [
-    { name: 'Cloud & Infrastructure', href: '#cloud-infrastructure' },
-    { name: 'Application Development', href: '#app-development' },
-    { name: 'Data & AI Engineering', href: '#data-ai' },
-    { name: 'Security & Compliance', href: '#security-compliance' },
-    { name: 'DevOps & SRE', href: '#devops-sre' },
-    { name: 'Managed Services', href: '#managed-services' },
-  ],
-  industries: [
-    { name: 'HealthTech', href: '#healthtech' },
-    { name: 'FinTech', href: '#fintech' },
-    { name: 'Government', href: '#government' },
-    { name: 'Enterprise SaaS', href: '#saas' },
-  ],
-};
+export const PROCESS = [
+  { step: 'Talk', body: 'A first conversation about what you need.' },
+  { step: 'Scope', body: 'Technical discovery, then agreed deliverables, assumptions and acceptance criteria.' },
+  { step: 'Build', body: 'Implementation with regular progress updates. We raise risks early.' },
+  { step: 'Test and deploy', body: 'Testing, your review, agreed corrections, then deployment.' },
+  { step: 'Hand over and support', body: 'Documentation and handover, and ongoing support where agreed.' },
+];
+
+export const ENGAGEMENTS = [
+  { name: 'Fixed-scope projects', body: 'For defined requirements, deliverables, timelines and acceptance criteria.' },
+  { name: 'Monthly retainers', body: 'For ongoing engineering capacity, maintenance, support and continued development.' },
+  { name: 'Technical assessments', body: 'A short engagement to review a system, find issues or plan an implementation.' },
+];
+
+export const FOUNDERS = [
+  { name: 'Stella Achar Oiro', role: 'CEO', photo: '/team/stella-320.webp' },
+  { name: 'Raymond Caleb', role: 'CTO', photo: '/team/raymond-320.webp' },
+  { name: 'Vincent Odhiambo', role: 'COO', photo: '/team/vincent-320.webp' },
+  { name: 'Seth Athooh', role: 'CFO', photo: '/team/seth-320.webp' },
+];

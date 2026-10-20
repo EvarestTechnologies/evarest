@@ -1,33 +1,25 @@
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-// import Hero from './components/sections/Hero';
-import HeroNew from './components/sections/HeroNew';
-// import ClientLogos from './components/sections/ClientLogos';
-// import ClientLogosNew from './components/sections/ClientLogosNew';
-import Services from './components/sections/Services';
-import ServiceBuilder from './components/sections/ServiceBuilder';
-import Industries from './components/sections/Industries';
-import FeaturedProjects from './components/sections/FeaturedProjects';
-import CaseStudies from './components/sections/CaseStudies';
-import Capabilities from './components/sections/Capabilities';
-import ConsultationSection from './components/sections/ConsultationSection';
-import { SERVICES } from './utils/constants';
+import Hero from './components/sections/Hero';
+import Products from './components/sections/Products';
+import Engineering from './components/sections/Engineering';
+import Work from './components/sections/Work';
+import HowWeWork from './components/sections/HowWeWork';
+import About from './components/sections/About';
+import Contact from './components/sections/Contact';
 
 function App() {
-
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Header />
       <main className="overflow-x-hidden">
-        <HeroNew />
-        {/* <ClientLogosNew /> */}
-        <Services />
-        <ServiceBuilder services={SERVICES} />
-        <Industries />
-        <FeaturedProjects />
-        <CaseStudies />
-        <Capabilities />
-        <ConsultationSection />
+        <Hero />
+        <Products />
+        <Engineering />
+        <Work />
+        <HowWeWork />
+        <About />
+        <Contact />
       </main>
       <Footer />
     </div>
