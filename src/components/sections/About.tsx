@@ -6,16 +6,16 @@ const About = () => (
       <div className="grid gap-12 lg:grid-cols-2">
         <div>
           <p className="mb-3 text-sm font-semibold tracking-wider uppercase text-brand-blue-500">About us</p>
-          <h2 className="mb-6 text-4xl font-bold lg:text-5xl text-brand-navy">Four founders who started by building together</h2>
+          <h2 className="mb-6 text-4xl font-bold lg:text-5xl text-brand-navy">Most teams meet when the project starts. We&rsquo;d already been building together for two years.</h2>
           <div className="space-y-4 text-lg text-slate-700">
             <p>
-              We met during two years of software development training at Zone01, where we entered hackathons as a
-              team and built solutions to real problems. Some of those projects won competitions. Kintaraa started there,
-              as our response to femicide and gender-based violence.
+              We trained as software engineers side by side and entered hackathons as a team, where the software has to
+              work by the deadline. Some of those projects won. One of them, Kintaraa, mattered too much to leave as a
+              demo, so we kept building it.
             </p>
             <p>
-              After the training, we chose to build a company together instead of going separate ways. Evarest builds
-              its own products and engineers software for other organisations.
+              When you work with Evarest, you get a team that already knows how to ship together. And because we run
+              products of our own, we know launch day is where the work starts, not where it ends.
             </p>
           </div>
         </div>
