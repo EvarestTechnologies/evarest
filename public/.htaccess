@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# ZEYA's WhatsApp profile and welcome message link to /zeya/. NE keeps the # in the target.
+RewriteRule ^zeya/?$ /products/#zeya [R=301,NE,L]
+
+ErrorDocument 404 /404.html

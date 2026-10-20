@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://evarestke.com"),
   icons: { icon: "/favicon.svg" },
+  openGraph: { siteName: "Evarest Technologies", type: "website", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
