@@ -10,7 +10,6 @@ export const CONTACT = {
   location: 'Nairobi, Kenya',
   linkedin: 'https://www.linkedin.com/company/evarest-technologies/',
   x: 'https://x.com/Evarestke',
-  github: 'https://github.com/EvarestTechnologies',
 };
 
 export const mailto = (subject: string) =>

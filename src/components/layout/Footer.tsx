@@ -33,7 +33,6 @@ const Footer = () => (
             <li className="flex gap-4 pt-2">
               <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan-400">LinkedIn</a>
               <a href={CONTACT.x} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan-400">X</a>
-              <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan-400">GitHub</a>
             </li>
           </ul>
         </div>

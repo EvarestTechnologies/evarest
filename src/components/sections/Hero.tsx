@@ -21,7 +21,7 @@ const Hero = () => (
         <div className="animate-slide-up">
           <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold border rounded-full bg-white border-brand-blue-200 text-brand-blue-500">
             <span className="w-2 h-2 rounded-full bg-brand-cyan-500" />
-            Software and AI engineering, built in Kenya
+            Software and AI engineering
           </span>
         </div>
 
